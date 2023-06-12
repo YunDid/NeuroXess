@@ -1,0 +1,26 @@
+﻿http://www.cgsoso.com/forum-211-1.html
+
+CG搜搜 Unity3d 每日Unity3d插件免费更新 更有VIP资源！
+
+CGSOSO 主打游戏开发，影视设计等CG资源素材。
+
+插件如若商用，请务必官网购买！
+
+daily assets update for try.
+
+U should buy the asset from home store if u use it in your project!
+103-123 idle
+053-061 run
+063-103 liedown
+124-166 getup
+167-180 jump
+182-270 hit long
+348-499 fight idle
+096-129 braking
+001-026 walk
+271-288 hit
+289-346 death
+501-527 attack
+033-051 idle2
+528-552 attack2
+552-585 attack3
