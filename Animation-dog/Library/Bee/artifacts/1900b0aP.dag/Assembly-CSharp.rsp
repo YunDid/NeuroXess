@@ -296,6 +296,7 @@
 -r:"D:/DownloadCache/Unity/2021.3.26f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.VRModule.dll"
 -r:"D:/DownloadCache/Unity/2021.3.26f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.WindModule.dll"
 -r:"D:/DownloadCache/Unity/2021.3.26f1c1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.XRModule.dll"
+-r:"D:/Yundid/Projects/Unity/Animation-dog/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.2.1/Runtime/AOT/Newtonsoft.Json.dll"
 -r:"D:/Yundid/Projects/Unity/Animation-dog/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.TextMeshPro.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.Timeline.ref.dll"
@@ -306,8 +307,11 @@
 "Assets/Scripts/AnimationClient.cs"
 "Assets/Scripts/AnimationServer.cs"
 "Assets/Scripts/AnimationServerCor.cs"
+"Assets/Scripts/CameraControl.cs"
 "Assets/Scripts/DogControl.cs"
 "Assets/Scripts/Server.cs"
+"Assets/Scripts/TestEvent.cs"
+"Assets/Scripts/TestTime.cs"
 "Assets/Scripts/UnityMainThreadDispatcher.cs"
 -langversion:9.0
 

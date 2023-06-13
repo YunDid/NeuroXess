@@ -1,103 +1,128 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Net;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading;
-using UnityEngine;
- 
-public class Server : MonoBehaviour
-{
-	private static int myProt = 8888;   //端口  
-	static Socket serverSocket;
-    Thread myThread;
-    Dictionary<string, Thread> threadDic = new Dictionary<string, Thread>();//存储线程，程序结束后关闭线程
-    private void Start()
-	{
-        //服务器IP地址  ，127.0.0.1 为本机IP地址
-        IPAddress ip = IPAddress.Parse("127.0.0.1");
-        //IPAddress ip = IPAddress.Any; //本机地址
-        Debug.Log(ip.ToString());
-        serverSocket = new Socket(AddressFamily.InterNetwork,SocketType.Stream,ProtocolType.Tcp);
- 
-        IPEndPoint iPEndPoint = new IPEndPoint(ip, myProt);
-        //serverSocket.Bind(new IPEndPoint(ip, myProt));  //绑定IP地址：端口  
-        serverSocket.Bind(iPEndPoint);  //绑定IP地址：端口  
-        serverSocket.Listen(10);    //最多10个连接请求  
-        //Console.WriteLine("creat service {0} success",
-        //    serverSocket.LocalEndPoint.ToString());
- 
-        myThread = new Thread(ListenClientConnect);
-        myThread.Start();
-        //Console.ReadLine();
-        Debug.Log("服务器启动...........");
- 
-    }
- 
-    // 监听客户端是否连接  
-    private void ListenClientConnect()
-    {
-        while (true)
-        {
-            Socket clientSocket = serverSocket.Accept(); //1.创建一个Socket 接收客户端发来的请求信息 没有消息时堵塞
-            clientSocket.Send(Encoding.ASCII.GetBytes("Server Say Hello")); //2.向客户端发送 连接成功 消息
-            Thread receiveThread = new Thread(ReceiveMessage); //3.为已经连接的客户端创建一个线程 此线程用来处理客户端发送的消息
-            receiveThread.Start(clientSocket); //4.开启线程
- 
-            //添加到字典中
-            string clientIp = ((IPEndPoint)clientSocket.RemoteEndPoint).Address.ToString();
-            //Debug.Log( clientSocket.LocalEndPoint.ToString()); //获取ip:端口号
-            if (!threadDic.ContainsKey(clientIp)) 
-            {
-                threadDic.Add(clientIp, receiveThread);
-            }
-        }
-    }
- 
-    private byte[] result = new byte[2048]; //1.存入的byte值 最大数量1024
-    //开启线程接收数据 （将Socket作为值传入）
-    private void ReceiveMessage(object clientSocket)
-    {
-        Socket myClientSocket = (Socket)clientSocket; //2.转换传入的客户端Socket
-        while (true)
-        {
-            try
-            {
-                //接收数据  
-                int receiveNumber = myClientSocket.Receive(result); //3.将客户端得到的byte值写入
-                //Debug.Log(receiveNumber);//子节数量
-                if (receiveNumber>0)
-                {
-                    Debug.Log("client say :" + Encoding.ASCII.GetString(result, 0, receiveNumber));
-                }
-                else
-                {
-                    Debug.Log("client： " + ((IPEndPoint)myClientSocket.RemoteEndPoint).Address.ToString() + "断开连接");
-                    threadDic[((IPEndPoint)myClientSocket.RemoteEndPoint).Address.ToString()].Abort(); //清除线程
-                }
-            }
-            catch (Exception ex)
-            {
-                //myClientSocket.Shutdown(SocketShutdown.Both); //出现错误 关闭Socket
-                Debug.Log(" 错误信息"+ex); //打印错误信息
-                break;
-            }
-        }
-    }
- 
-    void OnApplicationQuit()
-    {
-        //结束线程必须关闭 否则下次开启会出现错误 （如果出现的话 只能重启unity了）
-        myThread.Abort();
- 
-        //关闭开启的线程
-        foreach (string item in threadDic.Keys)
-        {
-            Debug.Log(item);//de.Key对应于key/value键值对key
-            //item.Value.GetType()
-            threadDic[item].Abort();
-        }
-    }
- 
-}
+
+// using System.Collections;
+// using System.Collections.Generic;
+// using UnityEngine;
+// using System;
+// using System.Net;
+// using System.Net.Sockets;
+// using System.Text;
+// using System.Threading;
+// using System.Collections.Concurrent;
+// using Newtonsoft.Json;
+
+// public class AnimationServer : MonoBehaviour
+// {
+//     private TcpListener tcpListener;
+//     private TcpClient connectedClient;
+
+//     public Animator animator;
+//     public int port = 8888;
+//     public float anispeed;
+
+//     private ConcurrentQueue<string> animationQueue = new ConcurrentQueue<string>();
+
+//     private void Start()
+//     {
+//         animator = GetComponent<Animator>();
+//         tcpListener = new TcpListener(IPAddress.Any, port);
+//         tcpListener.Start();
+//         Debug.Log("Server started. Waiting for client...");
+
+//         System.Threading.Tasks.Task.Run(() => ListenForClient());
+//     }
+
+//     private void Update()
+//     {
+//         ProcessReceivedAnimations();
+//     }
+
+//     private void ListenForClient()
+//     {
+//         connectedClient = tcpListener.AcceptTcpClient();
+//         Debug.Log("Client connected.");
+
+//         System.Threading.Tasks.Task.Run(() => ReceiveMessages());
+//     }
+
+//     private void SendMessages() 
+//     {
+//         // Create a response object with the desired data
+//         ReturnStateData returnStateData = new ReturnStateData();
+//         returnStateData.Message = "This is the return state message.";
+
+//         // Serialize the response object to JSON
+//         string response = JsonConvert.SerializeObject(returnStateData);
+
+//         // Send the response to the client
+//         byte[] responseBuffer = Encoding.ASCII.GetBytes(response);
+//         stream.Write(responseBuffer, 0, responseBuffer.Length);
+//     }
+//     private void ReceiveMessages()
+//     {
+//         byte[] buffer = new byte[1024];
+//         NetworkStream stream = connectedClient.GetStream();
+
+//         try
+//         {
+//             while (connectedClient.Connected)
+//             {
+//                 int bytesRead = stream.Read(buffer, 0, buffer.Length);
+//                 if (bytesRead > 0)
+//                 {
+//                     string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+//                     Debug.Log("Received message: " + message);
+
+//                     AnimationData animationData = JsonConvert.DeserializeObject<AnimationData>(message);
+
+//                     // Process the animation data
+//                     ProcessAnimationData(animationData);
+
+//                     // Check if the client requested a return state
+//                     if (animationData.NeedReturnStateFlag)
+//                     {
+//                        System.Threading.Tasks.Task.Run(() => SendMessages());
+//                     }
+//                 }
+//                 else
+//                 {
+//                     break;
+//                 }
+//             }
+//         }
+//         catch (Exception e)
+//         {
+//             Debug.Log("Error receiving message: " + e.Message);
+//         }
+
+//         stream.Close();
+//         connectedClient.Close();
+//         Debug.Log("Client disconnected.");
+//     }
+
+//     private void ProcessReceivedAnimations()
+//     {
+//         while (animationQueue.TryDequeue(out string animationName))
+//         {
+//             PlayAnimation(animationName);
+//         }
+//     }
+
+//     private void PlayAnimation(string animationName)
+//     {
+//         UnityMainThreadDispatcher.Instance.Enqueue(() =>
+//         {
+//             animator.Play(animationName);
+//         });
+//     }
+
+//     private void ProcessAnimationData(AnimationData animationData)
+//     {
+//         // Process the animation data based on your requirements
+//         string animationName = animationData.AnimationName;
+//         float speed = animationData.Speed;
+
+//         // Play the animation
+//         PlayAnimation(animationName);
+//         animator.speed = speed;
+//     }
+// }

@@ -1,479 +1,482 @@
 { "pid": 0, "tid": -1, "ph": "M", "name": "process_name", "args": { "name": "BeeDriver" } },
 { "pid": 0, "tid": -1, "ph": "M", "name": "process_sort_index", "args": { "sort_index": "-2" } },
 { "pid": 0, "tid": 1, "ph": "M", "name": "thread_name", "args": { "name": "" } },
-{ "pid": 0, "tid": 1, "ts": 1686537145182920, "dur": 714093, "ph": "X", "name": "Build Player", "args": {} },
-{ "pid": 0, "tid": 1, "ts": 1686537145183159, "dur": 16097, "ph": "X", "name": "WriteBuildProgramData", "args": {} },
-{ "pid": 0, "tid": 1, "ts": 1686537145199259, "dur": 31048, "ph": "X", "name": "Run Backend", "args": {} },
-{ "pid": 0, "tid": 1, "ts": 1686537145230338, "dur": 529394, "ph": "X", "name": "BuildProgram", "args": {} },
-{ "pid": 0, "tid": 1, "ts": 1686537145759735, "dur": 129245, "ph": "X", "name": "Run Backend", "args": {} },
-{ "pid": 0, "tid": 1, "ts": 1686537145888982, "dur": 8030, "ph": "X", "name": "Finish", "args": {} },
-{ "pid": 0, "tid": 1, "ts": 1686537145898031, "dur": 17, "ph": "X", "name": "", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1686650570919129, "dur": 6904023, "ph": "X", "name": "Build Player", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1686650570919678, "dur": 13920, "ph": "X", "name": "WriteBuildProgramData", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1686650570933602, "dur": 47057, "ph": "X", "name": "Run Backend", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1686650570980663, "dur": 493188, "ph": "X", "name": "BuildProgram", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1686650571473856, "dur": 6337412, "ph": "X", "name": "Run Backend", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1686650577811272, "dur": 11878, "ph": "X", "name": "Finish", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1686650577824254, "dur": 62, "ph": "X", "name": "", "args": {} },
 { "pid": 35942, "tid": -1, "ph": "M", "name": "process_name", "args": { "name": "netcorerun.dll" } },
 { "pid": 35942, "tid": -1, "ph": "M", "name": "process_sort_index", "args": { "sort_index": "-1" } },
 { "pid": 35942, "tid": 1, "ph": "M", "name": "thread_name", "args": { "name": "" } },
-{ "pid": 35942, "tid": 1, "ts": 1686537145437280, "dur": 300523, "ph": "X", "name": "BuildProgram", "args": {} },
-{ "pid": 35942, "tid": 1, "ts": 1686537145438491, "dur": 55836, "ph": "X", "name": "BuildProgramContextConstructor", "args": {} },
-{ "pid": 35942, "tid": 1, "ts": 1686537145720635, "dur": 4253, "ph": "X", "name": "OutputData.Write", "args": {} },
-{ "pid": 35942, "tid": 1, "ts": 1686537145724892, "dur": 12905, "ph": "X", "name": "Backend.Write", "args": {} },
-{ "pid": 35942, "tid": 1, "ts": 1686537145725611, "dur": 11562, "ph": "X", "name": "JsonToString", "args": {} },
-{ "pid": 35942, "tid": 1, "ts": 1686537145742257, "dur": 1064, "ph": "X", "name": "", "args": {} },
-{ "pid": 35942, "tid": 1, "ts": 1686537145741597, "dur": 1743, "ph": "X", "name": "Write chrome-trace events", "args": {} },
-{ "pid": 0, "tid": 1, "ts": 1686537145898229, "dur": 285, "ph": "X", "name": "buildprogram0.traceevents", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1686650571171380, "dur": 278744, "ph": "X", "name": "BuildProgram", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1686650571172617, "dur": 57465, "ph": "X", "name": "BuildProgramContextConstructor", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1686650571427574, "dur": 5267, "ph": "X", "name": "OutputData.Write", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1686650571432848, "dur": 17247, "ph": "X", "name": "Backend.Write", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1686650571433654, "dur": 15167, "ph": "X", "name": "JsonToString", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1686650571457458, "dur": 2092, "ph": "X", "name": "", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1686650571456271, "dur": 3329, "ph": "X", "name": "Write chrome-trace events", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1686650577824529, "dur": 378, "ph": "X", "name": "buildprogram0.traceevents", "args": {} },
 { "cat":"", "pid":12345, "tid":0, "ts":0, "ph":"M", "name":"process_name", "args": { "name":"bee_backend" } }
-,{ "pid":12345, "tid":0, "ts":1686537145790583, "dur":1613, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1686537145792202, "dur":31, "ph":"X", "name": "Tundra",  "args": { "detail":"RemoveStaleOutputs" }}
-,{ "pid":12345, "tid":0, "ts":1686537145792240, "dur":13, "ph":"X", "name": "Tundra",  "args": { "detail":"PrepareNodes" }}
-,{ "pid":12345, "tid":0, "ts":1686537145792253, "dur":255, "ph":"X", "name": "Tundra",  "args": { "detail":"BuildQueueInit" }}
-,{ "pid":12345, "tid":0, "ts":1686537145792530, "dur":395, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1686537145792925, "dur":1, "ph":"X", "name": "SortWorkingStack",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1686537145862641, "dur":136, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1686537145862777, "dur":14, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1686537145862791, "dur":3, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1686537145862794, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1686537145862799, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1686537145862801, "dur":7, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1686537145862808, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1686537145862809, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1686537145862814, "dur":3, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1686537145862817, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1686537145862823, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1686537145862824, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1686537145862831, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1686537145862832, "dur":3, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1686537145862835, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1686537145862836, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1686537145862841, "dur":0, "ph":"X", "name": "SharedResourceDestroy",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1686537145862860, "dur":2, "ph":"X", "name": "BuildQueueDestroyTail",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1686537145862880, "dur":1645, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
-,{ "pid":12345, "tid":1, "ts":1686537145792990, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1686537145792991, "dur":2201, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1686537145795231, "dur":1, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"WriteText Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info" }}
-,{ "pid":12345, "tid":1, "ts":1686537145795234, "dur":75, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1686537145795312, "dur":1, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/app.info" }}
-,{ "pid":12345, "tid":1, "ts":1686537145795316, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1686537145796910, "dur":2892, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/app.info" }}
-,{ "pid":12345, "tid":1, "ts":1686537145799806, "dur":67, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/4.0/web.config" }}
-,{ "pid":12345, "tid":1, "ts":1686537145799877, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1686537145799907, "dur":1675, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/4.0/web.config" }}
-,{ "pid":12345, "tid":1, "ts":1686537145801623, "dur":35, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":1, "ts":1686537145801661, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1686537145801676, "dur":1479, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":1, "ts":1686537145803177, "dur":40, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Resources/unity default resources" }}
-,{ "pid":12345, "tid":1, "ts":1686537145803219, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1686537145803619, "dur":15835, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Resources/unity default resources" }}
-,{ "pid":12345, "tid":1, "ts":1686537145819547, "dur":31, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1686537145819582, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1686537145819633, "dur":4881, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1686537145824537, "dur":35, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.TilemapModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1686537145824575, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1686537145824580, "dur":3140, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.TilemapModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1686537145827743, "dur":24, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.TerrainModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1686537145827770, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1686537145827776, "dur":3057, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.TerrainModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1686537145830857, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1686537145830885, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1686537145830892, "dur":4141, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1686537145835048, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.LocalizationModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1686537145835064, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1686537145835069, "dur":2652, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.LocalizationModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1686537145837740, "dur":32, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.GIModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1686537145837775, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1686537145837780, "dur":2603, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.GIModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1686537145840404, "dur":28, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1686537145840435, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1686537145840440, "dur":2399, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1686537145842871, "dur":28, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.AIModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1686537145842902, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1686537145842907, "dur":2443, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.AIModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1686537145845371, "dur":444, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/Unity.TextMeshPro.dll" }}
-,{ "pid":12345, "tid":1, "ts":1686537145845817, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1686537145845824, "dur":2863, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/Unity.TextMeshPro.dll" }}
-,{ "pid":12345, "tid":1, "ts":1686537145848711, "dur":18, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.IO.Compression.FileSystem.dll" }}
-,{ "pid":12345, "tid":1, "ts":1686537145848731, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1686537145848735, "dur":2194, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.IO.Compression.FileSystem.dll" }}
-,{ "pid":12345, "tid":1, "ts":1686537145850947, "dur":22, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.Configuration.dll" }}
-,{ "pid":12345, "tid":1, "ts":1686537145850971, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1686537145850974, "dur":3419, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.Configuration.dll" }}
-,{ "pid":12345, "tid":1, "ts":1686537145854428, "dur":33, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/sharedassets0.assets" }}
-,{ "pid":12345, "tid":1, "ts":1686537145854463, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1686537145854468, "dur":8082, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/sharedassets0.assets" }}
-,{ "pid":12345, "tid":1, "ts":1686537145862581, "dur":2, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Player" }}
-,{ "pid":12345, "tid":1, "ts":1686537145862583, "dur":1, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1686537145793129, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1686537145793129, "dur":2065, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1686537145795203, "dur":101, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":2, "ts":1686537145795306, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1686537145797347, "dur":2657, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":2, "ts":1686537145800035, "dur":77, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
-,{ "pid":12345, "tid":2, "ts":1686537145800115, "dur":4, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1686537145800125, "dur":1877, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
-,{ "pid":12345, "tid":2, "ts":1686537145802031, "dur":31, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/config" }}
-,{ "pid":12345, "tid":2, "ts":1686537145802065, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1686537145802072, "dur":2126, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/config" }}
-,{ "pid":12345, "tid":2, "ts":1686537145804225, "dur":24, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.XRModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145804252, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1686537145805675, "dur":2154, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.XRModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145807856, "dur":36, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.VideoModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145807897, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1686537145808026, "dur":6809, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.VideoModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145814877, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145814926, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1686537145814935, "dur":4650, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145819670, "dur":74, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145819746, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1686537145819753, "dur":4652, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145824431, "dur":30, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.TLSModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145824464, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1686537145824470, "dur":2514, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.TLSModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145827013, "dur":26, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145827042, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1686537145827049, "dur":4043, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145831112, "dur":20, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145831134, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1686537145831139, "dur":4236, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145835400, "dur":61, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145835464, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1686537145835469, "dur":2475, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145837977, "dur":29, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145838009, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1686537145838014, "dur":2751, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145840800, "dur":19, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.ClothModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145840822, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1686537145840827, "dur":2421, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.ClothModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145843264, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145843280, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1686537145843284, "dur":2434, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145845742, "dur":23, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.Xml.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145845767, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1686537145845791, "dur":3687, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.Xml.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145849503, "dur":29, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.EnterpriseServices.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145849534, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1686537145849540, "dur":3166, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.EnterpriseServices.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145852740, "dur":21, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/mscorlib.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145852764, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1686537145852769, "dur":4577, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/mscorlib.dll" }}
-,{ "pid":12345, "tid":2, "ts":1686537145857368, "dur":227, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/boot.config" }}
-,{ "pid":12345, "tid":2, "ts":1686537145857598, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1686537145857604, "dur":2305, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/boot.config" }}
-,{ "pid":12345, "tid":2, "ts":1686537145859942, "dur":2701, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1686537145793045, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1686537145793046, "dur":2149, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1686537145795203, "dur":110, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/4.5/web.config" }}
-,{ "pid":12345, "tid":3, "ts":1686537145795316, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1686537145797431, "dur":2720, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/4.5/web.config" }}
-,{ "pid":12345, "tid":3, "ts":1686537145800177, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":3, "ts":1686537145800240, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1686537145801087, "dur":1405, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":3, "ts":1686537145802521, "dur":62, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/UnityPlayer.dll" }}
-,{ "pid":12345, "tid":3, "ts":1686537145802585, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1686537145802588, "dur":26892, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/UnityPlayer.dll" }}
-,{ "pid":12345, "tid":3, "ts":1686537145829505, "dur":26, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1686537145829533, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1686537145829539, "dur":4367, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1686537145833939, "dur":26, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1686537145833968, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1686537145833972, "dur":2981, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1686537145836976, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.HotReloadModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1686537145836992, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1686537145836995, "dur":2658, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.HotReloadModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1686537145839683, "dur":30, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.CoreModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1686537145839735, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1686537145839741, "dur":3094, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.CoreModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1686537145842868, "dur":29, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1686537145842900, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1686537145842906, "dur":2539, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1686537145845468, "dur":18, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.Xml.Linq.dll" }}
-,{ "pid":12345, "tid":3, "ts":1686537145845489, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1686537145845494, "dur":2509, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.Xml.Linq.dll" }}
-,{ "pid":12345, "tid":3, "ts":1686537145848026, "dur":34, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.Numerics.dll" }}
-,{ "pid":12345, "tid":3, "ts":1686537145848063, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1686537145848073, "dur":2624, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.Numerics.dll" }}
-,{ "pid":12345, "tid":3, "ts":1686537145850737, "dur":17, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.Data.DataSetExtensions.dll" }}
-,{ "pid":12345, "tid":3, "ts":1686537145850756, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1686537145850760, "dur":3331, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.Data.DataSetExtensions.dll" }}
-,{ "pid":12345, "tid":3, "ts":1686537145854127, "dur":176, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/Assembly-CSharp.dll" }}
-,{ "pid":12345, "tid":3, "ts":1686537145854305, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1686537145854310, "dur":2318, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/Assembly-CSharp.dll" }}
-,{ "pid":12345, "tid":3, "ts":1686537145856668, "dur":30, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/level0" }}
-,{ "pid":12345, "tid":3, "ts":1686537145856701, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1686537145856710, "dur":2348, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/level0" }}
-,{ "pid":12345, "tid":3, "ts":1686537145859086, "dur":3531, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1686537145793069, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1686537145793069, "dur":2127, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1686537145795203, "dur":73, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
-,{ "pid":12345, "tid":4, "ts":1686537145795279, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1686537145797036, "dur":3057, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
-,{ "pid":12345, "tid":4, "ts":1686537145800117, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
-,{ "pid":12345, "tid":4, "ts":1686537145800177, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1686537145800184, "dur":1889, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
-,{ "pid":12345, "tid":4, "ts":1686537145802116, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/browscap.ini" }}
-,{ "pid":12345, "tid":4, "ts":1686537145802175, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1686537145802199, "dur":3011, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/browscap.ini" }}
-,{ "pid":12345, "tid":4, "ts":1686537145805249, "dur":32, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.VRModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145805283, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1686537145807186, "dur":2737, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.VRModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145809965, "dur":32, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145810002, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1686537145810008, "dur":5574, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145815607, "dur":31, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145815641, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1686537145815650, "dur":4157, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145819851, "dur":29, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UNETModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145819882, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1686537145819887, "dur":4514, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UNETModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145824429, "dur":387, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UI.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145824819, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1686537145824824, "dur":3790, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UI.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145828639, "dur":49, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.SubstanceModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145828691, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1686537145828697, "dur":4118, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.SubstanceModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145832845, "dur":34, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.PhysicsModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145832880, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1686537145832884, "dur":2702, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.PhysicsModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145835610, "dur":29, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145835642, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1686537145835647, "dur":2452, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145838130, "dur":24, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145838156, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1686537145838161, "dur":2840, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145841021, "dur":20, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.AudioModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145841044, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1686537145841051, "dur":2590, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.AudioModule.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145843668, "dur":346, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/Unity.VisualScripting.Flow.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145844017, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1686537145844020, "dur":2662, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/Unity.VisualScripting.Flow.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145846703, "dur":17, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.ServiceModel.Internals.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145846722, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1686537145846725, "dur":2813, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.ServiceModel.Internals.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145849567, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.Drawing.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145849621, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1686537145849625, "dur":3044, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.Drawing.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145852700, "dur":39, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/netstandard.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145852742, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1686537145852751, "dur":2250, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/netstandard.dll" }}
-,{ "pid":12345, "tid":4, "ts":1686537145855023, "dur":149, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/RuntimeInitializeOnLoads.json" }}
-,{ "pid":12345, "tid":4, "ts":1686537145855175, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1686537145855181, "dur":3236, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/RuntimeInitializeOnLoads.json" }}
-,{ "pid":12345, "tid":4, "ts":1686537145858461, "dur":4157, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1686537145793096, "dur":1, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1686537145793097, "dur":2100, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1686537145795203, "dur":112, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":5, "ts":1686537145795318, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1686537145797854, "dur":2260, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":5, "ts":1686537145800163, "dur":35, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":5, "ts":1686537145800201, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1686537145800223, "dur":1936, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
-,{ "pid":12345, "tid":5, "ts":1686537145802182, "dur":40, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145802224, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1686537145802503, "dur":2909, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145805446, "dur":35, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145805483, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1686537145806571, "dur":7021, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145813626, "dur":32, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145813692, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1686537145813705, "dur":6287, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145820030, "dur":1714, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UmbraModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145821748, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1686537145821840, "dur":4136, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UmbraModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145825996, "dur":41, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145826041, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1686537145826046, "dur":3019, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145829089, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.StreamingModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145829148, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1686537145829156, "dur":4569, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.StreamingModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145833760, "dur":30, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145833792, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1686537145833797, "dur":3058, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145836878, "dur":36, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145836917, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1686537145836924, "dur":2726, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145839682, "dur":32, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145839739, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1686537145839746, "dur":2477, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145842254, "dur":28, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.ARModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145842284, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1686537145842289, "dur":2238, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.ARModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145844549, "dur":20, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145844572, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1686537145844577, "dur":2209, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145846808, "dur":28, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.Security.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145846838, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1686537145846843, "dur":2730, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.Security.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145849613, "dur":24, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145849641, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1686537145849649, "dur":4288, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145853957, "dur":22, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/Mono.Security.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145853982, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1686537145853989, "dur":2925, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/Mono.Security.dll" }}
-,{ "pid":12345, "tid":5, "ts":1686537145856958, "dur":34, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/globalgamemanagers.assets" }}
-,{ "pid":12345, "tid":5, "ts":1686537145856994, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1686537145857000, "dur":3078, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/globalgamemanagers.assets" }}
-,{ "pid":12345, "tid":5, "ts":1686537145860104, "dur":2515, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1686537145793176, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1686537145793177, "dur":2016, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1686537145795203, "dur":296, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
-,{ "pid":12345, "tid":6, "ts":1686537145795501, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1686537145799395, "dur":1542, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
-,{ "pid":12345, "tid":6, "ts":1686537145800964, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
-,{ "pid":12345, "tid":6, "ts":1686537145801024, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1686537145801049, "dur":1686, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
-,{ "pid":12345, "tid":6, "ts":1686537145802765, "dur":24, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog.exe" }}
-,{ "pid":12345, "tid":6, "ts":1686537145802792, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1686537145802796, "dur":1613, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog.exe" }}
-,{ "pid":12345, "tid":6, "ts":1686537145804423, "dur":16, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.WindModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145804441, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1686537145806244, "dur":3012, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.WindModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145809288, "dur":40, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.VehiclesModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145809331, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1686537145809337, "dur":6177, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.VehiclesModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145815608, "dur":33, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145815644, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1686537145815651, "dur":4999, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145821037, "dur":84, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UIWidgetsModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145821126, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1686537145821136, "dur":2964, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UIWidgetsModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145824125, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UIElementsModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145824154, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1686537145824161, "dur":3968, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UIElementsModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145828152, "dur":21, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145828175, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1686537145828181, "dur":3120, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145831325, "dur":20, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.ProfilerModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145831348, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1686537145831353, "dur":4040, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.ProfilerModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145835435, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.InputModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145835463, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1686537145835469, "dur":2472, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.InputModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145837976, "dur":29, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.GameCenterModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145838008, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1686537145838014, "dur":2869, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.GameCenterModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145840904, "dur":22, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.AutoStreamingModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145840929, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1686537145840935, "dur":2681, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.AutoStreamingModule.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145843633, "dur":170, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/Unity.VisualScripting.State.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145843805, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1686537145843810, "dur":2587, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/Unity.VisualScripting.State.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145846419, "dur":23, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.Transactions.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145846444, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1686537145846449, "dur":2658, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.Transactions.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145849128, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.IO.Compression.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145849155, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1686537145849159, "dur":2081, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.IO.Compression.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145851259, "dur":20, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.ComponentModel.Composition.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145851281, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1686537145851292, "dur":3318, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.ComponentModel.Composition.dll" }}
-,{ "pid":12345, "tid":6, "ts":1686537145854696, "dur":310, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/ScriptingAssemblies.json" }}
-,{ "pid":12345, "tid":6, "ts":1686537145855010, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1686537145855016, "dur":2217, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/ScriptingAssemblies.json" }}
-,{ "pid":12345, "tid":6, "ts":1686537145857257, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/globalgamemanagers" }}
-,{ "pid":12345, "tid":6, "ts":1686537145857284, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1686537145857289, "dur":2347, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/globalgamemanagers" }}
-,{ "pid":12345, "tid":6, "ts":1686537145859659, "dur":2987, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1686537145793156, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1686537145793156, "dur":2042, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1686537145795203, "dur":112, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":7, "ts":1686537145795319, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1686537145799283, "dur":1320, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
-,{ "pid":12345, "tid":7, "ts":1686537145800622, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
-,{ "pid":12345, "tid":7, "ts":1686537145800649, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1686537145800951, "dur":1545, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
-,{ "pid":12345, "tid":7, "ts":1686537145802560, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/UnityCrashHandler64.exe" }}
-,{ "pid":12345, "tid":7, "ts":1686537145802619, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1686537145802624, "dur":6581, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/UnityCrashHandler64.exe" }}
-,{ "pid":12345, "tid":7, "ts":1686537145809253, "dur":29, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.VFXModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1686537145809285, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1686537145809291, "dur":5552, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.VFXModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1686537145814878, "dur":62, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1686537145814944, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1686537145814950, "dur":3283, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1686537145818257, "dur":28, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1686537145818287, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1686537145818320, "dur":4094, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1686537145822438, "dur":22, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UIModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1686537145822468, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1686537145822481, "dur":2891, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UIModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1686537145825394, "dur":26, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1686537145825422, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1686537145825429, "dur":3721, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1686537145829184, "dur":24, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1686537145829210, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1686537145829215, "dur":4507, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1686537145833752, "dur":16, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.Physics2DModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1686537145833769, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1686537145833773, "dur":2885, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.Physics2DModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1686537145836681, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.IMGUIModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1686537145836709, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1686537145836714, "dur":2532, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.IMGUIModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1686537145839273, "dur":21, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.DirectorModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1686537145839296, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1686537145839302, "dur":2628, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.DirectorModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1686537145841956, "dur":29, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1686537145842002, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1686537145842008, "dur":2091, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1686537145844118, "dur":519, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/Unity.VisualScripting.Core.dll" }}
-,{ "pid":12345, "tid":7, "ts":1686537145844640, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1686537145844645, "dur":2546, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/Unity.VisualScripting.Core.dll" }}
-,{ "pid":12345, "tid":7, "ts":1686537145847214, "dur":21, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.Runtime.Serialization.dll" }}
-,{ "pid":12345, "tid":7, "ts":1686537145847237, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1686537145847240, "dur":2812, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.Runtime.Serialization.dll" }}
-,{ "pid":12345, "tid":7, "ts":1686537145850071, "dur":17, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.Data.dll" }}
-,{ "pid":12345, "tid":7, "ts":1686537145850090, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1686537145850093, "dur":4034, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.Data.dll" }}
-,{ "pid":12345, "tid":7, "ts":1686537145854159, "dur":29, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Resources/unity_builtin_extra" }}
-,{ "pid":12345, "tid":7, "ts":1686537145854190, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1686537145854220, "dur":1430, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Resources/unity_builtin_extra" }}
-,{ "pid":12345, "tid":7, "ts":1686537145855679, "dur":29, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/level0.resS" }}
-,{ "pid":12345, "tid":7, "ts":1686537145855715, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1686537145855721, "dur":3214, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/level0.resS" }}
-,{ "pid":12345, "tid":7, "ts":1686537145858970, "dur":3662, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1686537145793200, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1686537145793200, "dur":1996, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1686537145795203, "dur":112, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
-,{ "pid":12345, "tid":8, "ts":1686537145795319, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1686537145798367, "dur":1801, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
-,{ "pid":12345, "tid":8, "ts":1686537145800223, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/2.0/web.config" }}
-,{ "pid":12345, "tid":8, "ts":1686537145800277, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1686537145800811, "dur":1359, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/etc/mono/2.0/web.config" }}
-,{ "pid":12345, "tid":8, "ts":1686537145802197, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
-,{ "pid":12345, "tid":8, "ts":1686537145802253, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1686537145802520, "dur":15575, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
-,{ "pid":12345, "tid":8, "ts":1686537145818138, "dur":39, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1686537145818180, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1686537145818190, "dur":4609, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1686537145822822, "dur":95, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1686537145822920, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1686537145822925, "dur":2691, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1686537145825642, "dur":32, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1686537145825677, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1686537145825683, "dur":4011, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1686537145829715, "dur":22, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1686537145829739, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1686537145829745, "dur":4408, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1686537145834167, "dur":15, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1686537145834183, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1686537145834186, "dur":3323, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1686537145837524, "dur":19, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.GridModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1686537145837561, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1686537145837566, "dur":2678, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.GridModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1686537145840265, "dur":23, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1686537145840291, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1686537145840296, "dur":2362, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1686537145842683, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.AnimationModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1686537145842710, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1686537145842717, "dur":2590, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/UnityEngine.AnimationModule.dll" }}
-,{ "pid":12345, "tid":8, "ts":1686537145845341, "dur":215, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/Unity.Timeline.dll" }}
-,{ "pid":12345, "tid":8, "ts":1686537145845559, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1686537145845563, "dur":2682, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/Unity.Timeline.dll" }}
-,{ "pid":12345, "tid":8, "ts":1686537145848276, "dur":21, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.Net.Http.dll" }}
-,{ "pid":12345, "tid":8, "ts":1686537145848299, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1686537145848304, "dur":2442, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.Net.Http.dll" }}
-,{ "pid":12345, "tid":8, "ts":1686537145850772, "dur":20, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.Core.dll" }}
-,{ "pid":12345, "tid":8, "ts":1686537145850795, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1686537145850799, "dur":3598, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/Managed/System.Core.dll" }}
-,{ "pid":12345, "tid":8, "ts":1686537145854427, "dur":37, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/sharedassets0.assets.resS" }}
-,{ "pid":12345, "tid":8, "ts":1686537145854467, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1686537145854472, "dur":7171, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV2/Animation-dog_Data/sharedassets0.assets.resS" }}
-,{ "pid":12345, "tid":8, "ts":1686537145861675, "dur":965, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1686537145866110, "dur":1459, "ph":"X", "name": "ProfilerWriteOutput" }
-,{ "pid": 0, "tid": 1, "ts": 1686537145898616, "dur": 673, "ph": "X", "name": "backend_profiler1.traceevents", "args": {} },
-{ "pid": 0, "tid": 1, "ts": 1686537145898019, "dur": 1283, "ph": "X", "name": "Write chrome-trace events", "args": {} },
+,{ "pid":12345, "tid":0, "ts":1686650571515098, "dur":2305, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1686650571517411, "dur":44, "ph":"X", "name": "Tundra",  "args": { "detail":"RemoveStaleOutputs" }}
+,{ "pid":12345, "tid":0, "ts":1686650571517465, "dur":17, "ph":"X", "name": "Tundra",  "args": { "detail":"PrepareNodes" }}
+,{ "pid":12345, "tid":0, "ts":1686650571517482, "dur":312, "ph":"X", "name": "Tundra",  "args": { "detail":"BuildQueueInit" }}
+,{ "pid":12345, "tid":0, "ts":1686650571517821, "dur":468, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1686650571518289, "dur":0, "ph":"X", "name": "SortWorkingStack",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1686650577791864, "dur":109, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1686650577791974, "dur":26, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1686650577792000, "dur":10, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1686650577792010, "dur":8, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1686650577792018, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1686650577792019, "dur":7, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1686650577792026, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1686650577792027, "dur":4, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1686650577792031, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1686650577792032, "dur":4, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1686650577792036, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1686650577792037, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1686650577792042, "dur":0, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1686650577792042, "dur":4, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1686650577792046, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1686650577792047, "dur":4, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1686650577792051, "dur":1, "ph":"X", "name": "SharedResourceDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1686650577792064, "dur":1, "ph":"X", "name": "BuildQueueDestroyTail",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1686650577792067, "dur":3054, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
+,{ "pid":12345, "tid":1, "ts":1686650571518459, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1686650571518461, "dur":2668, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1686650571521139, "dur":1, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"WriteText Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info" }}
+,{ "pid":12345, "tid":1, "ts":1686650571521142, "dur":68, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1686650571521212, "dur":2, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/app.info" }}
+,{ "pid":12345, "tid":1, "ts":1686650571521216, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1686650571523165, "dur":4965, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/app.info" }}
+,{ "pid":12345, "tid":1, "ts":1686650571528133, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":1, "ts":1686650571528187, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1686650571528213, "dur":1825, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":1, "ts":1686650571530071, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":1, "ts":1686650571530119, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1686650571530126, "dur":2936, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":1, "ts":1686650571533085, "dur":24, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog.exe" }}
+,{ "pid":12345, "tid":1, "ts":1686650571533111, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1686650571533114, "dur":270946, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog.exe" }}
+,{ "pid":12345, "tid":1, "ts":1686650571804094, "dur":76, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.WindModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1686650571804202, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1686650571804241, "dur":4504891, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.WindModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1686650576309157, "dur":22, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1686650576309181, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1686650576309187, "dur":1230939, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1686650577540150, "dur":18, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1686650577540171, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1686650577540178, "dur":10823, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1686650577551029, "dur":24, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.TLSModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1686650577551056, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1686650577551063, "dur":16669, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.TLSModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1686650577567755, "dur":22, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.SubstanceModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1686650577567779, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1686650577567785, "dur":17795, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.SubstanceModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1686650577585601, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.PhysicsModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1686650577585629, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1686650577585633, "dur":8286, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.PhysicsModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1686650577593939, "dur":15, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1686650577593956, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1686650577593961, "dur":8571, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1686650577602565, "dur":24, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1686650577602591, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1686650577602595, "dur":8772, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1686650577611402, "dur":21, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.AudioModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1686650577611427, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1686650577611432, "dur":16540, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.AudioModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1686650577627987, "dur":239, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/Unity.VisualScripting.Flow.dll" }}
+,{ "pid":12345, "tid":1, "ts":1686650577628228, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1686650577628232, "dur":10860, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/Unity.VisualScripting.Flow.dll" }}
+,{ "pid":12345, "tid":1, "ts":1686650577639121, "dur":23, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.ServiceModel.Internals.dll" }}
+,{ "pid":12345, "tid":1, "ts":1686650577639146, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1686650577639152, "dur":21522, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.ServiceModel.Internals.dll" }}
+,{ "pid":12345, "tid":1, "ts":1686650577660689, "dur":15, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.Drawing.dll" }}
+,{ "pid":12345, "tid":1, "ts":1686650577660705, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1686650577660709, "dur":38955, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.Drawing.dll" }}
+,{ "pid":12345, "tid":1, "ts":1686650577699696, "dur":540, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/Newtonsoft.Json.dll" }}
+,{ "pid":12345, "tid":1, "ts":1686650577700238, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1686650577700243, "dur":67965, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/Newtonsoft.Json.dll" }}
+,{ "pid":12345, "tid":1, "ts":1686650577768230, "dur":167, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":1, "ts":1686650577768400, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1686650577768407, "dur":21651, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":1, "ts":1686650577790091, "dur":1771, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1686650571518756, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1686650571518756, "dur":2377, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1686650571521140, "dur":130, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":2, "ts":1686650571521347, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1686650571526142, "dur":3459, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":2, "ts":1686650571529644, "dur":571, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":2, "ts":1686650571530218, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1686650571530243, "dur":3273, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":2, "ts":1686650571533557, "dur":40, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":2, "ts":1686650571533600, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1686650571533920, "dur":4761926, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":2, "ts":1686650576295880, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.VehiclesModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1686650576295932, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1686650576295937, "dur":1237399, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.VehiclesModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1686650577533366, "dur":37, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1686650577533407, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1686650577533416, "dur":11412, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1686650577544859, "dur":35, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UIWidgetsModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1686650577544897, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1686650577544904, "dur":12065, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UIWidgetsModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1686650577556989, "dur":22, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1686650577557013, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1686650577557017, "dur":24893, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1686650577581929, "dur":15, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1686650577581946, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1686650577581950, "dur":7900, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1686650577589868, "dur":15, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1686650577589884, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1686650577589889, "dur":7535, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1686650577597444, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.HotReloadModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1686650577597471, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1686650577597475, "dur":9498, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.HotReloadModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1686650577606993, "dur":19, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1686650577607014, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1686650577607019, "dur":6879, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1686650577613913, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.AnimationModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1686650577613928, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1686650577613932, "dur":16317, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.AnimationModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1686650577630276, "dur":21, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
+,{ "pid":12345, "tid":2, "ts":1686650577630300, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1686650577630306, "dur":9987, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
+,{ "pid":12345, "tid":2, "ts":1686650577640318, "dur":18, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.Security.dll" }}
+,{ "pid":12345, "tid":2, "ts":1686650577640338, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1686650577640344, "dur":18259, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.Security.dll" }}
+,{ "pid":12345, "tid":2, "ts":1686650577658624, "dur":16, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.EnterpriseServices.dll" }}
+,{ "pid":12345, "tid":2, "ts":1686650577658641, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1686650577658645, "dur":41070, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.EnterpriseServices.dll" }}
+,{ "pid":12345, "tid":2, "ts":1686650577699753, "dur":22, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/netstandard.dll" }}
+,{ "pid":12345, "tid":2, "ts":1686650577699777, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1686650577699783, "dur":61153, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/netstandard.dll" }}
+,{ "pid":12345, "tid":2, "ts":1686650577760974, "dur":194, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/ScriptingAssemblies.json" }}
+,{ "pid":12345, "tid":2, "ts":1686650577761171, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1686650577761179, "dur":28736, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/ScriptingAssemblies.json" }}
+,{ "pid":12345, "tid":2, "ts":1686650577789943, "dur":1906, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1686650571518585, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1686650571518585, "dur":2551, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1686650571521140, "dur":93, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":3, "ts":1686650571521236, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1686650571524815, "dur":4693, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":3, "ts":1686650571529539, "dur":35, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":3, "ts":1686650571529594, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1686650571530257, "dur":1642, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":3, "ts":1686650571531940, "dur":72, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650571532015, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1686650571532253, "dur":3295325, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650574827611, "dur":27, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650574827640, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1686650574827648, "dur":2704637, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650577532318, "dur":32, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650577532353, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1686650577532361, "dur":8853, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650577541242, "dur":27, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UNETModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650577541272, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1686650577541280, "dur":11084, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UNETModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650577552385, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.TilemapModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650577552412, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1686650577552418, "dur":14567, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.TilemapModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650577567009, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650577567036, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1686650577567040, "dur":16758, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650577583813, "dur":18, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650577583833, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1686650577583837, "dur":7232, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650577591095, "dur":22, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.LocalizationModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650577591120, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1686650577591126, "dur":8498, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.LocalizationModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650577599639, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.GIModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650577599655, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1686650577599659, "dur":6596, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.GIModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650577606276, "dur":24, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650577606302, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1686650577606307, "dur":7019, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650577613341, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.ARModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650577613357, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1686650577613360, "dur":17563, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.ARModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650577630946, "dur":205, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650577631154, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1686650577631162, "dur":16916, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650577648099, "dur":22, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.Numerics.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650577648123, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1686650577648129, "dur":34264, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.Numerics.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650577682409, "dur":19, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.Data.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650577682430, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1686650577682435, "dur":54781, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.Data.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650577737246, "dur":26, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/Mono.Security.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650577737276, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1686650577737285, "dur":51612, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/Mono.Security.dll" }}
+,{ "pid":12345, "tid":3, "ts":1686650577788946, "dur":34, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/globalgamemanagers" }}
+,{ "pid":12345, "tid":3, "ts":1686650577788984, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1686650577788994, "dur":2403, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/globalgamemanagers" }}
+,{ "pid":12345, "tid":3, "ts":1686650577791426, "dur":420, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1686650571518819, "dur":1, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1686650571518820, "dur":2311, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1686650571521140, "dur":813, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":4, "ts":1686650571521957, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1686650571527084, "dur":2771, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":4, "ts":1686650571529925, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":4, "ts":1686650571529985, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1686650571530010, "dur":1862, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":4, "ts":1686650571531901, "dur":61, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":4, "ts":1686650571531965, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1686650571532348, "dur":1214380, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":4, "ts":1686650572746771, "dur":42, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.VRModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1686650572746817, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1686650572746828, "dur":4784086, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.VRModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1686650577530939, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1686650577530998, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1686650577531007, "dur":13920, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1686650577545029, "dur":40, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UIModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1686650577545072, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1686650577545105, "dur":11830, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UIModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1686650577556964, "dur":24, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1686650577556990, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1686650577556995, "dur":23841, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1686650577580858, "dur":26, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1686650577580886, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1686650577580892, "dur":6849, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1686650577587755, "dur":17, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1686650577587774, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1686650577587777, "dur":8190, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1686650577595987, "dur":15, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1686650577596004, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1686650577596010, "dur":10265, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1686650577606303, "dur":26, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.CoreModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1686650577606331, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1686650577606334, "dur":16960, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.CoreModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1686650577623329, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1686650577623357, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1686650577623364, "dur":9606, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1686650577632997, "dur":366, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":4, "ts":1686650577633366, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1686650577633373, "dur":17946, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":4, "ts":1686650577651341, "dur":21, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.Net.Http.dll" }}
+,{ "pid":12345, "tid":4, "ts":1686650577651388, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1686650577651394, "dur":41257, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.Net.Http.dll" }}
+,{ "pid":12345, "tid":4, "ts":1686650577692668, "dur":16, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.Core.dll" }}
+,{ "pid":12345, "tid":4, "ts":1686650577692686, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1686650577692692, "dur":64648, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.Core.dll" }}
+,{ "pid":12345, "tid":4, "ts":1686650577757383, "dur":121, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/sharedassets0.assets" }}
+,{ "pid":12345, "tid":4, "ts":1686650577757508, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1686650577757517, "dur":33554, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/sharedassets0.assets" }}
+,{ "pid":12345, "tid":4, "ts":1686650577791097, "dur":750, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1686650571518710, "dur":1, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1686650571518712, "dur":2420, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1686650571521139, "dur":84, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":5, "ts":1686650571521226, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1686650571524531, "dur":4118, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":5, "ts":1686650571528681, "dur":35, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":5, "ts":1686650571528718, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1686650571528724, "dur":4089, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":5, "ts":1686650571532841, "dur":41, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/UnityPlayer.dll" }}
+,{ "pid":12345, "tid":5, "ts":1686650571532884, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1686650571532889, "dur":5996782, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/UnityPlayer.dll" }}
+,{ "pid":12345, "tid":5, "ts":1686650577529733, "dur":54, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1686650577529791, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1686650577529802, "dur":13014, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1686650577542845, "dur":33, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UmbraModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1686650577542881, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1686650577542890, "dur":10163, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UmbraModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1686650577553075, "dur":22, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1686650577553100, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1686650577553105, "dur":25766, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1686650577578889, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1686650577578905, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1686650577578910, "dur":9441, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1686650577588374, "dur":30, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1686650577588407, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1686650577588413, "dur":10637, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1686650577599072, "dur":16, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.GridModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1686650577599090, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1686650577599094, "dur":8520, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.GridModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1686650577607636, "dur":30, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1686650577607668, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1686650577607674, "dur":17493, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1686650577625185, "dur":15, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.AIModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1686650577625201, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1686650577625207, "dur":8799, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.AIModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1686650577634025, "dur":17, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.Xml.Linq.dll" }}
+,{ "pid":12345, "tid":5, "ts":1686650577634044, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1686650577634049, "dur":20825, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.Xml.Linq.dll" }}
+,{ "pid":12345, "tid":5, "ts":1686650577654900, "dur":24, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.IO.Compression.FileSystem.dll" }}
+,{ "pid":12345, "tid":5, "ts":1686650577654927, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1686650577654935, "dur":38328, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.IO.Compression.FileSystem.dll" }}
+,{ "pid":12345, "tid":5, "ts":1686650577693279, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.Configuration.dll" }}
+,{ "pid":12345, "tid":5, "ts":1686650577693295, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1686650577693299, "dur":52051, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.Configuration.dll" }}
+,{ "pid":12345, "tid":5, "ts":1686650577745394, "dur":35, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Resources/unity_builtin_extra" }}
+,{ "pid":12345, "tid":5, "ts":1686650577745432, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1686650577745476, "dur":39358, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Resources/unity_builtin_extra" }}
+,{ "pid":12345, "tid":5, "ts":1686650577784866, "dur":28, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/level0" }}
+,{ "pid":12345, "tid":5, "ts":1686650577784898, "dur":5, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1686650577784908, "dur":6313, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/level0" }}
+,{ "pid":12345, "tid":5, "ts":1686650577791247, "dur":601, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1686650571518930, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1686650571518931, "dur":2203, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1686650571521140, "dur":61, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":6, "ts":1686650571521206, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1686650571523797, "dur":5031, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":6, "ts":1686650571528854, "dur":39, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":6, "ts":1686650571528896, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1686650571528901, "dur":2377, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":6, "ts":1686650571531311, "dur":36, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":6, "ts":1686650571531349, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1686650571531357, "dur":4764380, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":6, "ts":1686650576295814, "dur":66, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.VFXModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1686650576295883, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1686650576295893, "dur":1238718, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.VFXModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1686650577534636, "dur":26, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1686650577534665, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1686650577534672, "dur":12577, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1686650577547270, "dur":32, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1686650577547305, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1686650577547314, "dur":10531, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1686650577557877, "dur":21, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1686650577557900, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1686650577557906, "dur":25154, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1686650577583081, "dur":26, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1686650577583110, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1686650577583115, "dur":7998, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1686650577591134, "dur":20, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1686650577591156, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1686650577591161, "dur":9054, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1686650577600235, "dur":18, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.GameCenterModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1686650577600255, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1686650577600260, "dur":9057, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.GameCenterModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1686650577609336, "dur":14, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.ClothModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1686650577609352, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1686650577609358, "dur":16448, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.ClothModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1686650577625827, "dur":21, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1686650577625850, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1686650577625854, "dur":9351, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1686650577635222, "dur":16, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.Xml.dll" }}
+,{ "pid":12345, "tid":6, "ts":1686650577635239, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1686650577635243, "dur":43260, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.Xml.dll" }}
+,{ "pid":12345, "tid":6, "ts":1686650577678526, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.dll" }}
+,{ "pid":12345, "tid":6, "ts":1686650577678554, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1686650577678562, "dur":40614, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.dll" }}
+,{ "pid":12345, "tid":6, "ts":1686650577719206, "dur":20, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/mscorlib.dll" }}
+,{ "pid":12345, "tid":6, "ts":1686650577719229, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1686650577719235, "dur":65501, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/mscorlib.dll" }}
+,{ "pid":12345, "tid":6, "ts":1686650577784775, "dur":31, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/level0.resS" }}
+,{ "pid":12345, "tid":6, "ts":1686650577784810, "dur":6, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1686650577784824, "dur":6336, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/level0.resS" }}
+,{ "pid":12345, "tid":6, "ts":1686650577791192, "dur":665, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1686650571519206, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1686650571519206, "dur":1965, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1686650571521171, "dur":62, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":7, "ts":1686650571521237, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1686650571526233, "dur":2862, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":7, "ts":1686650571529122, "dur":31, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":7, "ts":1686650571529155, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1686650571529162, "dur":2140, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":7, "ts":1686650571531455, "dur":137, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":7, "ts":1686650571531594, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1686650571531600, "dur":2886, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":7, "ts":1686650571534513, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.XRModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1686650571534541, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1686650571534953, "dur":4770912, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.XRModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1686650576305915, "dur":38, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1686650576305957, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1686650576305966, "dur":1232180, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1686650577538183, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1686650577538212, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1686650577538219, "dur":12772, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1686650577551016, "dur":343, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":7, "ts":1686650577551362, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1686650577551368, "dur":14885, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":7, "ts":1686650577566272, "dur":25, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.TerrainModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1686650577566299, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1686650577566304, "dur":18643, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.TerrainModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1686650577584961, "dur":15, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.ProfilerModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1686650577584977, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1686650577584995, "dur":6804, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.ProfilerModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1686650577591823, "dur":22, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.InputModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1686650577591847, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1686650577591853, "dur":10689, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.InputModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1686650577602566, "dur":21, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.dll" }}
+,{ "pid":12345, "tid":7, "ts":1686650577602589, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1686650577602594, "dur":8760, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.dll" }}
+,{ "pid":12345, "tid":7, "ts":1686650577611382, "dur":28, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.AutoStreamingModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1686650577611412, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1686650577611419, "dur":15612, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.AutoStreamingModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1686650577627046, "dur":119, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/Unity.VisualScripting.State.dll" }}
+,{ "pid":12345, "tid":7, "ts":1686650577627179, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1686650577627184, "dur":8610, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/Unity.VisualScripting.State.dll" }}
+,{ "pid":12345, "tid":7, "ts":1686650577635808, "dur":15, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.Transactions.dll" }}
+,{ "pid":12345, "tid":7, "ts":1686650577635825, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1686650577635828, "dur":19971, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.Transactions.dll" }}
+,{ "pid":12345, "tid":7, "ts":1686650577655816, "dur":16, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.IO.Compression.dll" }}
+,{ "pid":12345, "tid":7, "ts":1686650577655834, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1686650577655839, "dur":38755, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.IO.Compression.dll" }}
+,{ "pid":12345, "tid":7, "ts":1686650577694610, "dur":18, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.ComponentModel.Composition.dll" }}
+,{ "pid":12345, "tid":7, "ts":1686650577694630, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1686650577694634, "dur":50808, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.ComponentModel.Composition.dll" }}
+,{ "pid":12345, "tid":7, "ts":1686650577745476, "dur":36, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/sharedassets0.assets.resS" }}
+,{ "pid":12345, "tid":7, "ts":1686650577745515, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1686650577745520, "dur":39547, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/sharedassets0.assets.resS" }}
+,{ "pid":12345, "tid":7, "ts":1686650577785105, "dur":26, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/globalgamemanagers.assets" }}
+,{ "pid":12345, "tid":7, "ts":1686650577785134, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1686650577785140, "dur":6260, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/globalgamemanagers.assets" }}
+,{ "pid":12345, "tid":7, "ts":1686650577791425, "dur":423, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1686650571519062, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1686650571519063, "dur":2074, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1686650571521140, "dur":75, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":8, "ts":1686650571521218, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1686650571523873, "dur":5918, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":8, "ts":1686650571529815, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":8, "ts":1686650571529865, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1686650571530167, "dur":2877, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":8, "ts":1686650571533070, "dur":41, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":8, "ts":1686650571533113, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1686650571533118, "dur":4762483, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":8, "ts":1686650576295671, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.VideoModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1686650576295731, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1686650576295741, "dur":1241260, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.VideoModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1686650577537023, "dur":20, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1686650577537062, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1686650577537068, "dur":11162, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1686650577548254, "dur":22, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UIElementsModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1686650577548279, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1686650577548285, "dur":28986, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.UIElementsModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1686650577577299, "dur":23, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.StreamingModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1686650577577376, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1686650577577382, "dur":9717, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.StreamingModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1686650577587121, "dur":20, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.Physics2DModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1686650577587144, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1686650577587150, "dur":8255, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.Physics2DModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1686650577595425, "dur":22, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.IMGUIModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1686650577595449, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1686650577595454, "dur":8802, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.IMGUIModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1686650577604276, "dur":20, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.DirectorModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1686650577604298, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1686650577604302, "dur":8425, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.DirectorModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1686650577612744, "dur":15, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1686650577612761, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1686650577612766, "dur":15878, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1686650577628658, "dur":319, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/Unity.VisualScripting.Core.dll" }}
+,{ "pid":12345, "tid":8, "ts":1686650577628979, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1686650577628983, "dur":16065, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/Unity.VisualScripting.Core.dll" }}
+,{ "pid":12345, "tid":8, "ts":1686650577645075, "dur":21, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.Runtime.Serialization.dll" }}
+,{ "pid":12345, "tid":8, "ts":1686650577645098, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1686650577645105, "dur":45117, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.Runtime.Serialization.dll" }}
+,{ "pid":12345, "tid":8, "ts":1686650577690251, "dur":21, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.Data.DataSetExtensions.dll" }}
+,{ "pid":12345, "tid":8, "ts":1686650577690275, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1686650577690283, "dur":49912, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/System.Data.DataSetExtensions.dll" }}
+,{ "pid":12345, "tid":8, "ts":1686650577740232, "dur":182, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":8, "ts":1686650577740416, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1686650577740424, "dur":49384, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/Managed/Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":8, "ts":1686650577789837, "dur":194, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/boot.config" }}
+,{ "pid":12345, "tid":8, "ts":1686650577790034, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1686650577790041, "dur":1777, "ph":"X", "name": "CopyFiles",  "args": { "detail":"D:/Yundid/Projects/Unity/DogGameV3/Animation-dog_Data/boot.config" }}
+,{ "pid":12345, "tid":8, "ts":1686650577791834, "dur":1, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Player" }}
+,{ "pid":12345, "tid":8, "ts":1686650577791835, "dur":0, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1686650577797390, "dur":1549, "ph":"X", "name": "ProfilerWriteOutput" }
+,{ "pid": 0, "tid": 1, "ts": 1686650577825035, "dur": 1100, "ph": "X", "name": "backend_profiler1.traceevents", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1686650577824221, "dur": 1940, "ph": "X", "name": "Write chrome-trace events", "args": {} },

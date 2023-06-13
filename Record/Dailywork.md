@@ -72,10 +72,6 @@
 
     > 资源占用问题.
 
-数据格式 事件
-
-雷哥对接
-
 # 2023.6.9
 
 > 实现Unity可操纵三种状态响应的拉布拉多犬demo.
@@ -89,6 +85,8 @@
    - **模型动画切片类型存在问题，待解决.**
 
      > 对动画切片进行切割可能解决该问题.
+     >
+     > 已将行走动画切分为迈出左腿与卖出右腿.
 
 2. 完成基本的 **Unity 事件**响应，触发动画.
 
@@ -102,7 +100,7 @@
      >
      > **状态只能触发一次，具化需求时需要看一下具体的接口下的动画切片调用逻辑**
 
-   - 通过旧版 Animation 直接触发动画，而不是动画的切换.
+   - 通过旧版 Animation 直接触发动画，而不是动画的切换. - 舍弃
 
      > 如果不需要过渡，只需要单独每个动画播放结束后复原即可.
 
@@ -419,4 +417,824 @@ public class AnimationServer : MonoBehaviour
 }
 ```
 
-- 周四
+# 2023.6.13
+
+- 如何解决实时播放问题.
+
+1. 队列无法解决实时问题，Sever 的动画播放始终是滞后的.
+
+> 网络通信无法循环读取缓存区内容.
+>
+> 因为对消息队列的访问时排他性的，在 Update 与 ReadMessage 之间.
+>
+> 但是 ConcurrentQueue 却允许同时写入.
+>
+> 在这个场景中，使用队列几乎是线程安全的，因为Sever只管队头取Client只管队尾插，两者会存在什么冲突呢？
+
+2. 基于事件信号实现实时通信.
+
+   > 若客户端发送的信号过快又该怎么办？
+   >
+   > 动画切片的播放需要时间，客户端发送间隔也有一个时间量，当两者不统一时，怎么办，也就是说播一个动画切片的时候，客户端可能发了3个信号，如何处理.
+
+3. 那如果结合事件信号于消息队列呢？
+
+   > 
+
+- 动画切片在播放时有可能被打断.
+
+- 动画切片播放速度如何度量？
+
+  > 动画切片在播放时可以设置速度，但是客户端发送速度值时应该怎么设置这个速度值，参照什么来设置？
+  >
+  > 速度为1时，1分钟150步.
+
+- 为什么只有第一次传输的数据是消息，其余的均为空呢？**- 解决**
+
+  > Server 一直在循环读取缓存区内容.
+  >
+  > 在客户端断开连接后，缓存区内容不会再作更新，不需要再循环读取了.
+
+- ReceiveMessages 中 while 循环是不是不太合适 **- 解决**
+
+  > 首先是客户端断开连接后，Sever端会一直循环读取缓存区，导致Sever无法关闭此次通信连接，第二个，当客户端很长一段时间没有发送数据的时候，Sever端也会一直读取空的缓存区.
+
+  1. 在读取缓冲区前，先判断客户端是否已经断开连接，也就是每次循环前.
+
+     > 这样子就不会导致客户端已经关闭还在循环读取.
+
+  2. 读取缓冲区字节流，读取后并判断是否为空.
+
+     > 是否为空目的是判断客户端是不是不发数据了，而不是缓存区是否为空.
+     >
+     > stream 对象内容是跟随客户端实时更新的，若客户端断开连接，则直接触发异常，Sever 端随之断开连接.
+     >
+     > 而且 stream.Read 是阻塞函数，不是阻塞主线程，而是 ReceiveMessages 线程，所以这个会一直等待客户端发送信息，若没有信息且客户端没有断开连接，则等待，若没有信息且客户端已经断开连接，则触发异常，Server 也随之断开连接.
+
+  3. 为空可以添加延时代码来选择是否直接关闭连接或者延时等待一段时间后关闭.
+
+     > 断开连接的设置不是很好，Sever 端是通过判断是否已经不发数据了，不发则直接断开，但是这个断开连接请求应该是客户端先发，**接口还不清楚.**
+
+- 若客户端发送的是一个字段，该如何解析呢？
+
+  > Tcp 网络通信传输基于字节数组，因此对应数据结构的发送需要基于协议去解析.
+  >
+  > **等后续再去解决这个问题.**
+
+- **对于客户端连续发送的数据该如何处理？**
+
+  > 字节流需要切割吗？还是每次可以是一个完整的字段.
+
+- 摄像机的移动. **- 解决**
+
+  > 与 Unity 默认的摄像头控制逻辑相同.
+  >
+  > 鼠标右键 + Q W E A S D 控制摄像机移动.
+  >
+  > 鼠标右键控制摄像头旋转.
+  >
+  > 根据鼠标的当前位置或者键盘按下的轴值来控制旋转以及移动的增量.
+
+- 动画切片是否还有可以暴露的属性接口.
+
+  > 先通过Json实现多字段传输的通道，再找.
+
+- 多加几种状态.
+
+  > 出现切片打断的情况时再找.
+
+- 接收到信号时发送当前状态，显示当前切片的播放状态. **- 解决** 
+
+  > 设置发送字段，若标志位为true，则返回当前状态.
+  >
+  > 以json的格式传递.
+  >
+  > 一来一往方式，就是发送一次数据，请求返回一个状态，然后再发送？
+
+- 添加一个退出程序的UI.
+
+- 如何验证当前动画切片的播放时正常的？
+
+- 数据请求的Timing需要进一步探究.
+
+- 如何验证一个动画切片的播放是正常的？
+
+- 当前正在播放的和任务队列中存放的状态不一样.
+
+  > 也就是当前播放的状态播放完后的下一个状态并不一定是现在客户端发的.
+
+v3.0 ReceiveMessages 阻塞问题完善.
+
+``` c# 
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading;
+using System.Collections.Concurrent;
+
+public class AnimationServer : MonoBehaviour
+{
+    private TcpListener tcpListener;
+    private TcpClient connectedClient;
+
+    public Animator animator;
+    public int port = 8888;
+
+    // 使用队列存储客户端事件消息
+    // private Queue<string> animationQueue = new Queue<string>();
+
+    // 保护共享资源的互斥锁
+    //private object queueLock = new object();
+
+    // ConcurrentQueue Unity 内部已经实现了线程安全，无需自行加锁
+    private ConcurrentQueue<string> animationQueue = new ConcurrentQueue<string>();
+
+    private void Start()
+    {
+        // 获取动画组件的引用
+        animator = GetComponent<Animator>();
+
+        // 启动服务器
+        tcpListener = new TcpListener(IPAddress.Any, port);
+        tcpListener.Start();
+        Debug.Log("Server started. Waiting for client...");
+
+        // 在后台线程监听客户端连接
+        System.Threading.Tasks.Task.Run(() => ListenForClient());
+    }
+
+    private void Update()
+    {
+        // 在主线程中处理接收到的动画事件并执行动画播放操作
+        ProcessReceivedAnimations();
+    }
+
+    private void ListenForClient()
+    {
+        connectedClient = tcpListener.AcceptTcpClient();
+        Debug.Log("Client connected.");
+
+        // 在后台线程监听客户端消息
+        System.Threading.Tasks.Task.Run(() => ReceiveMessages());
+    }
+
+    // private void ReceiveMessages()
+    // {
+    //     byte[] buffer = new byte[1024];
+    //     NetworkStream stream = connectedClient.GetStream();
+
+    //     while (true)
+    //     {
+    //         try
+    //         {
+    //             // 清空缓冲区
+    //             // Array.Clear(buffer, 0, buffer.Length);
+                
+    //             // 读取客户端发送的数据
+    //             int bytesRead = stream.Read(buffer, 0, buffer.Length);
+    //             string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+
+    //             Debug.Log("Test log animationName: " + message);
+
+    //             // // 根据接收到的消息触发相应的模型动画
+    //             // switch (message)
+    //             // {
+    //             //     case "Attack":
+    //             //         PlayAnimation("Attack");
+    //             //         break;
+    //             //     case "Pissing":
+    //             //         PlayAnimation("Pissing");
+    //             //         break;
+    //             //     case "Death":
+    //             //         PlayAnimation("Death");
+    //             //         break;
+    //             //     // 添加其他需要处理的消息和相应的动画触发逻辑
+    //             //     default:
+    //             //         Debug.Log("Unknown message: " + message);
+    //             //         break;
+    //             // }
+
+    //             // 将接收到的动画事件添加到队列中
+    //             if(message != "")
+    //                 animationQueue.Enqueue(message);
+    //         }
+    //         catch (Exception e)
+    //         {
+    //             Debug.Log("Error receiving message: " + e.Message);
+    //             break;
+    //         }
+    //     }
+
+    //     stream.Close();
+    //     connectedClient.Close();
+    //     Debug.Log("Client disconnected.");
+    // }
+ 
+    private void ReceiveMessages()
+    {
+        byte[] buffer = new byte[1024];
+
+        // 读取或写入字节数据的对象.
+        NetworkStream stream = connectedClient.GetStream();
+
+        try
+        {
+            while (connectedClient.Connected)
+            {
+                // 返回读取字节流中的实际字节数.
+                // 阻塞方法，若没有字节可读，将阻塞当前线程.
+                int bytesRead = stream.Read(buffer, 0, buffer.Length);
+                // 这个 bytesRead 的指针是否会移动，否则暂存缓存会导致判断不准确.
+                if (bytesRead > 0)
+                {
+                    string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+
+                    Debug.Log("Test log animationName: " + message);
+
+                    // 将接收到的动画事件添加到队列中
+                    animationQueue.Enqueue(message);
+                }
+                else
+                {
+                    // 客户端断开连接
+                    // 可以于此设置延时等待.
+                    break;
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.Log("Error receiving message: " + e.Message);
+        }
+
+        stream.Close();
+        connectedClient.Close();
+        Debug.Log("Client disconnected.");
+    }
+
+    private void PlayAnimation(string animationName)
+    {
+        // 在主线程中触发模型动画
+        UnityMainThreadDispatcher.Instance.Enqueue(() =>
+        {
+            animator.Play(animationName);
+        });
+        // Debug.Log("Error receiving message: " + animationName);
+    }
+
+    private void ProcessReceivedAnimations()
+    {
+        // lock (queueLock)
+        // {
+        //     while (animationQueue.Count > 0)
+        //     {
+        //         string animationName = animationQueue.Dequeue();
+        //         Debug.Log("animationName: " + animationName);
+        //         PlayAnimation(animationName);
+        //     }
+        // }
+
+        // 在主线程中处理动画事件队列
+        while (animationQueue.TryDequeue(out string animationName))
+        {
+            // 处理动画事件
+            Debug.Log("animationName: " + animationName);
+            PlayAnimation(animationName);
+        }
+    }
+
+}
+```
+
+v4.0 网络字段通过Json传输.
+
+``` c#
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading;
+using System.Collections.Concurrent;
+using Newtonsoft.Json;
+
+public class AnimationServer : MonoBehaviour
+{
+    private TcpListener tcpListener;
+    private TcpClient connectedClient;
+
+    public Animator animator;
+    public int port = 8888;
+    //Test Speed
+    public float anispeed;
+
+    // 使用队列存储客户端事件消息
+    // private Queue<string> animationQueue = new Queue<string>();
+
+    // 保护共享资源的互斥锁
+    //private object queueLock = new object();
+
+    // ConcurrentQueue Unity 内部已经实现了线程安全，无需自行加锁
+    private ConcurrentQueue<AnimationData> animationQueue = new ConcurrentQueue<AnimationData>();
+
+    public class AnimationData
+    {
+        public string AnimationName { get; set; }
+        public float Speed { get; set; }
+    }
+
+    private void Start()
+    {
+        // 获取动画组件的引用
+        animator = GetComponent<Animator>();
+
+        // 启动服务器
+        tcpListener = new TcpListener(IPAddress.Any, port);
+        tcpListener.Start();
+        Debug.Log("Server started. Waiting for client...");
+
+        // 在后台线程监听客户端连接
+        System.Threading.Tasks.Task.Run(() => ListenForClient());
+    }
+
+    private void Update()
+    {
+        // 在主线程中处理接收到的动画事件并执行动画播放操作
+        ProcessReceivedAnimations();
+    }
+
+    private void ListenForClient()
+    {
+        connectedClient = tcpListener.AcceptTcpClient();
+        Debug.Log("Client connected.");
+
+        // 在后台线程监听客户端消息
+        System.Threading.Tasks.Task.Run(() => ReceiveMessages());
+    }
+ 
+    private void ReceiveMessages()
+    {
+        byte[] buffer = new byte[1024];
+
+        // 读取或写入字节数据的对象.
+        NetworkStream stream = connectedClient.GetStream();
+
+        try
+        {
+            while (connectedClient.Connected)
+            {
+                // 返回读取字节流中的实际字节数.
+                // 阻塞方法，若没有字节可读，将阻塞当前线程.
+                int bytesRead = stream.Read(buffer, 0, buffer.Length);
+                // 这个 bytesRead 的指针是否会移动，否则暂存缓存会导致判断不准确.
+                if (bytesRead > 0)
+                {
+                    // string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+
+                    // Debug.Log("Test log animationName: " + message);
+
+                    // // 将接收到的动画事件添加到队列中
+                    // animationQueue.Enqueue(message);
+
+                    // 添加其他根据接收字段需要处理的事件.
+                    string jsonString = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+
+                    // 反序列化 JSON 字符串为自定义数据结构
+                    AnimationData receivedData = JsonConvert.DeserializeObject<AnimationData>(jsonString);
+
+                    // 可以访问 receivedData 的各个字段并进行相应处理
+                    Debug.Log("AnimationName: " + receivedData.AnimationName);
+                    Debug.Log("Speed: " + receivedData.Speed);
+
+                    // 没有加条件处理消息字段的可靠性.
+                    // 将接收到的动画属性字段入队列.
+                    animationQueue.Enqueue(receivedData);
+                }
+                else
+                {
+                    // 客户端断开连接
+                    // 可以于此设置延时等待.
+                    break;
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.Log("Error receiving message: " + e.Message);
+        }
+
+        stream.Close();
+        connectedClient.Close();
+        Debug.Log("Client disconnected.");
+    }
+
+    private void PlayAnimation(AnimationData animation)
+    {
+        // 在主线程中触发模型动画
+        UnityMainThreadDispatcher.Instance.Enqueue(() =>
+        {
+            animator.speed = animation.Speed;
+            animator.Play(animation.AnimationName);
+        });
+        // Debug.Log("Error receiving message: " + animationName);
+    }
+
+    private void ProcessReceivedAnimations()
+    {
+        // lock (queueLock)
+        // {
+        //     while (animationQueue.Count > 0)
+        //     {
+        //         string animationName = animationQueue.Dequeue();
+        //         Debug.Log("animationName: " + animationName);
+        //         PlayAnimation(animationName);
+        //     }
+        // }
+
+        // 在主线程中处理动画事件队列
+        while (animationQueue.TryDequeue(out AnimationData animation))
+        {
+            // 处理动画事件
+            Debug.Log("animationName: " + animation.AnimationName);
+            Debug.Log("animationSpeed: " + animation.Speed);
+            // 目前接口写死，这个速度或者其余控制参数都可以通过字段传递，目前仅作测试用
+            PlayAnimation(animation);
+        }
+    }
+
+}
+```
+
+v4.0.1 添加服务端发送数据的接口.
+
+``` c# 
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading;
+using System.Collections.Concurrent;
+using Newtonsoft.Json;
+
+public class AnimationServer : MonoBehaviour
+{
+    private TcpListener tcpListener;
+    private TcpClient connectedClient;
+
+    public Animator animator;
+    public int port = 8888;
+    //Test Speed
+    public float anispeed;
+
+    // 使用队列存储客户端事件消息
+    // private Queue<string> animationQueue = new Queue<string>();
+
+    // 保护共享资源的互斥锁
+    //private object queueLock = new object();
+
+    // ConcurrentQueue Unity 内部已经实现了线程安全，无需自行加锁
+    private ConcurrentQueue<AnimationData> animationQueue = new ConcurrentQueue<AnimationData>();
+
+    public class AnimationData
+    {   
+        // 动画切片名称
+        public string AnimationName { get; set; }
+        // 动画切片的播放速度
+        public float Speed { get; set; }
+        // 客户端 : 设置是否需要返回当前动画切片的播放状态
+        public bool NeedReturnStateFlag { get; set; }
+    }
+
+    public class AnimationStateData
+    {
+        // 动画切片名称
+        public string AnimationName { get; set; }
+        // 动画切片的播放速度
+        public float Speed { get; set; }
+        // 服务端 : 返回当前动画切片的播放状态
+        public bool IsCorrect { get; set; }
+    }
+
+    private void Start()
+    {
+        // 获取动画组件的引用
+        animator = GetComponent<Animator>();
+
+        // 启动服务器
+        tcpListener = new TcpListener(IPAddress.Any, port);
+        tcpListener.Start();
+        Debug.Log("Server started. Waiting for client...");
+
+        // 在后台线程监听客户端连接
+        System.Threading.Tasks.Task.Run(() => ListenForClient());
+    }
+
+    private void Update()
+    {
+        // 在主线程中处理接收到的动画事件并执行动画播放操作
+        ProcessReceivedAnimations();
+    }
+
+    private void ListenForClient()
+    {
+        connectedClient = tcpListener.AcceptTcpClient();
+        Debug.Log("Client connected.");
+
+        // 在后台线程监听客户端消息
+        System.Threading.Tasks.Task.Run(() => ReceiveMessages());
+    }
+ 
+    private void ReceiveMessages()
+    {
+        byte[] buffer = new byte[1024];
+
+        // 读取或写入字节数据的对象.
+        NetworkStream stream = connectedClient.GetStream();
+
+        try
+        {
+            while (connectedClient.Connected)
+            {
+                // 返回读取字节流中的实际字节数.
+                // 阻塞方法，若没有字节可读，将阻塞当前线程.
+                int bytesRead = stream.Read(buffer, 0, buffer.Length);
+                // 这个 bytesRead 的指针是否会移动，否则暂存缓存会导致判断不准确.
+                if (bytesRead > 0)
+                {
+                    // string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+
+                    // Debug.Log("Test log animationName: " + message);
+
+                    // // 将接收到的动画事件添加到队列中
+                    // animationQueue.Enqueue(message);
+
+                    // 添加其他根据接收字段需要处理的事件.
+                    string jsonString = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+
+                    // 反序列化 JSON 字符串为自定义数据结构
+                    AnimationData receivedData = JsonConvert.DeserializeObject<AnimationData>(jsonString);
+
+                    // 可以访问 receivedData 的各个字段并进行相应处理
+                    Debug.Log("AnimationName: " + receivedData.AnimationName);
+                    Debug.Log("Speed: " + receivedData.Speed);
+
+                    if (receivedData.NeedReturnStateFlag)
+                    {
+                       System.Threading.Tasks.Task.Run(() => SendMessages(ref stream));
+                    }
+
+                    // 没有加条件处理消息字段的可靠性.
+                    // 将接收到的动画属性字段入队列.
+                    animationQueue.Enqueue(receivedData);
+                }
+                else
+                {
+                    // 客户端断开连接
+                    // 可以于此设置延时等待.
+                    break;
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.Log("Error receiving message: " + e.Message);
+        }
+
+        stream.Close();
+        connectedClient.Close();
+        Debug.Log("Client disconnected.");
+    }
+
+    private void SendMessages(ref NetworkStream stream) 
+    {
+        // 创建返回对象.
+        AnimationStateData returnStateData = new AnimationStateData();
+        returnStateData.AnimationName = "This is the return state message.";
+        returnStateData.Speed = 10;
+        returnStateData.IsCorrect = true;
+
+        // Serialize the response object to JSON
+        string response = JsonConvert.SerializeObject(returnStateData);
+
+        // Send the response to the client
+        byte[] responseBuffer = Encoding.ASCII.GetBytes(response);
+        stream.Write(responseBuffer, 0, responseBuffer.Length);
+    }
+
+    private void PlayAnimation(AnimationData animation)
+    {
+        // 在主线程中触发模型动画
+        UnityMainThreadDispatcher.Instance.Enqueue(() =>
+        {
+            animator.speed = animation.Speed;
+            animator.Play(animation.AnimationName);
+        });
+        // Debug.Log("Error receiving message: " + animationName);
+    }
+
+    private void ProcessReceivedAnimations()
+    {
+        // lock (queueLock)
+        // {
+        //     while (animationQueue.Count > 0)
+        //     {
+        //         string animationName = animationQueue.Dequeue();
+        //         Debug.Log("animationName: " + animationName);
+        //         PlayAnimation(animationName);
+        //     }
+        // }
+
+        // 在主线程中处理动画事件队列
+        while (animationQueue.TryDequeue(out AnimationData animation))
+        {
+            // 处理动画事件
+            Debug.Log("animationName: " + animation.AnimationName);
+            Debug.Log("animationSpeed: " + animation.Speed);
+            // 目前接口写死，这个速度或者其余控制参数都可以通过字段传递，目前仅作测试用
+            PlayAnimation(animation);
+        }
+    }
+
+}
+```
+
+Qt 客户端
+
+``` c# 
+//#include <QCoreApplication>
+//#include <QTcpSocket>
+//#include <QJsonDocument>
+//#include <QJsonObject>
+//#include <QTimer>
+
+////void SendAnimationCommand(const QString& command)
+////{
+////    QTcpSocket socket;
+////    socket.connectToHost("127.0.0.1", 8888);
+////    int count = 0;
+
+////    if (socket.waitForConnected())
+////    {
+////        QByteArray data = command.toUtf8();
+////        QTimer* timer = new QTimer(); // 使用 QTimer 对象
+////        int delay = 1000; // 设置延迟时间为 1 秒
+
+//////        while (true) {
+
+//////            count++;
+//////            timer->setInterval(delay);
+//////            socket.write(data);
+//////            socket.waitForBytesWritten();
+//////            if(count == 10)
+//////                break;
+//////        }
+////        socket.write(data);
+////        socket.waitForBytesWritten();
+////        socket.disconnectFromHost();
+////        while(true) {
+
+////        }
+////    }
+////    else
+////    {
+////        qDebug() << "Failed to connect to server.";
+////    }
+////}
+
+
+//void SendAnimationCommand(const QJsonObject& commandObject)
+//{
+//    QTcpSocket socket;
+//    socket.connectToHost("127.0.0.1", 8888);
+
+//    if (socket.waitForConnected())
+//    {
+//        QJsonDocument jsonDoc(commandObject);
+//        QByteArray jsonData = jsonDoc.toJson();
+
+//        socket.write(jsonData);
+//        socket.waitForBytesWritten();
+//        socket.disconnectFromHost();
+//    }
+//    else
+//    {
+//        qDebug() << "Failed to connect to server.";
+//    }
+//}
+
+//int main(int argc, char *argv[])
+//{
+//    QCoreApplication a(argc, argv);
+
+//    QJsonObject commandObject;
+//    commandObject["AnimationName"] = "LeftLeg";
+//    commandObject["Speed"] = 5;
+//    // 添加其他字段...
+
+//    SendAnimationCommand(commandObject);
+
+//    return a.exec();
+//}
+
+#include <QCoreApplication>
+#include <QTcpSocket>
+#include <QTimer>
+#include <QDebug>
+#include <QJsonDocument>
+#include <QJsonObject>
+
+struct AnimationData
+{
+    QString AnimationName;
+    float Speed;
+    bool NeedReturnStateFlag;
+};
+
+struct ReturnStateData
+{
+    QString AnimationName;
+    float Speed;
+    bool IsCorrect;
+};
+
+void ReceiveAnimationCommand(QTcpSocket& socket);
+
+void SendAnimationCommand(const AnimationData& animationData)
+{
+    QTcpSocket socket;
+    socket.connectToHost("127.0.0.1", 8888);
+
+    if (socket.waitForConnected())
+    {
+        // Serialize the animation data to JSON
+        QJsonObject jsonObject;
+        jsonObject["AnimationName"] = animationData.AnimationName;
+        jsonObject["Speed"] = animationData.Speed;
+        jsonObject["NeedReturnStateFlag"] = animationData.NeedReturnStateFlag;
+
+        QJsonDocument jsonDocument(jsonObject);
+        QByteArray jsonData = jsonDocument.toJson();
+
+        // Send the JSON data to the server
+        socket.write(jsonData);
+        socket.waitForBytesWritten();
+
+        // Check if the client expects a return state
+        if (animationData.NeedReturnStateFlag)
+        {
+            ReceiveAnimationCommand(socket);
+        }
+    }
+    else
+    {
+        qDebug() << "Failed to connect to server.";
+    }
+}
+
+void ReceiveAnimationCommand(QTcpSocket& socket)
+{
+    // Wait for the server's response
+    socket.waitForReadyRead();
+
+    // Read the response from the server
+    QByteArray responseData = socket.readAll();
+    QJsonDocument responseJson = QJsonDocument::fromJson(responseData);
+    QJsonObject responseObj = responseJson.object();
+
+    // Deserialize the response data
+    ReturnStateData returnStateData;
+    returnStateData.AnimationName = responseObj["AnimationName"].toString();
+    returnStateData.Speed = responseObj["Speed"].toInt();
+    returnStateData.IsCorrect = responseObj["IsCorrect"].toBool();
+
+    // Process the returned state data as needed
+    qDebug() << "Received return state message: " << returnStateData.AnimationName;
+    qDebug() << "Received return state message: " << returnStateData.Speed;
+    qDebug() << "Received return state message: " << returnStateData.IsCorrect;
+}
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+
+    AnimationData animationData;
+    animationData.AnimationName = "LeftLeg";
+    animationData.Speed = 5.0;
+    animationData.NeedReturnStateFlag = true;
+
+    SendAnimationCommand(animationData);
+
+    return a.exec();
+}
+
+```
+

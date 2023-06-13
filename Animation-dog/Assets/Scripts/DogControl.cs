@@ -15,15 +15,15 @@ public class DogControl : MonoBehaviour
     void Update()
     {
          // 检测输入并触发相应的动画状态转换
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             PlayAnimation(1);
         }
-        else if (Input.GetKeyDown(KeyCode.E))
+        else if (Input.GetKeyDown(KeyCode.F))
         {
             PlayAnimation(2);
         }
-        else if (Input.GetKeyDown(KeyCode.W))
+        else if (Input.GetKeyDown(KeyCode.V))
         {
             PlayAnimation(3);
         }
