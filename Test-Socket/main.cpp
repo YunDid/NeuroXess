@@ -90,16 +90,21 @@ struct AnimationData
 struct ReturnStateData
 {
     QString AnimationName;
+    // 当前动画的播放速度
     float Speed;
     bool IsCorrect;
+    // 检测当前是否有动画在播放
+    bool IsPlaying;
+    // 检测动画是否播放完毕
+    bool IsEndPlaying;
+    // 检测动画是否被打断
+    bool IsInterrupted;
 };
 
 void ReceiveAnimationCommand(QTcpSocket& socket);
 
-void SendAnimationCommand(const AnimationData& animationData)
+void SendAnimationCommand(const AnimationData& animationData,QTcpSocket& socket)
 {
-    QTcpSocket socket;
-    socket.connectToHost("127.0.0.1", 8888);
 
     if (socket.waitForConnected())
     {
@@ -141,13 +146,17 @@ void ReceiveAnimationCommand(QTcpSocket& socket)
     // 反序列化数据
     ReturnStateData returnStateData;
     returnStateData.AnimationName = responseObj["AnimationName"].toString();
+    // 强转int不对，先赋值整数测，或者字段类型改为daouble
     returnStateData.Speed = responseObj["Speed"].toInt();
     returnStateData.IsCorrect = responseObj["IsCorrect"].toBool();
 
     // debug
-    qDebug() << "Received return state message: " << returnStateData.AnimationName;
-    qDebug() << "Received return state message: " << returnStateData.Speed;
-    qDebug() << "Received return state message: " << returnStateData.IsCorrect;
+    qDebug() << "Received return state AnimationName: " << returnStateData.AnimationName;
+    qDebug() << "Received return state Speed: " << returnStateData.Speed;
+    qDebug() << "Received return state IsCorrect: " << returnStateData.IsCorrect;
+    qDebug() << "Received return state IsEndPlaying: " << returnStateData.IsEndPlaying;
+    qDebug() << "Received return state IsInterrupted: " << returnStateData.IsInterrupted;
+    qDebug() << "Received return state IsPlaying: " << returnStateData.IsPlaying;
 }
 
 int main(int argc, char *argv[])
@@ -156,10 +165,31 @@ int main(int argc, char *argv[])
 
     AnimationData animationData;
     animationData.AnimationName = "LeftLeg";
-    animationData.Speed = 5.0;
+    animationData.Speed = 1.0f;
     animationData.NeedReturnStateFlag = true;
 
-    SendAnimationCommand(animationData);
+    QTcpSocket socket;
+    socket.connectToHost("127.0.0.1", 8888);
+
+    int count = 0;
+
+    while(true)
+    {
+
+        // 播放 20 次动画
+
+        if(count % 2 == 0)
+            animationData.AnimationName = "LeftLeg";
+        else
+            animationData.AnimationName = "RightLeg";
+
+        SendAnimationCommand(animationData, socket);
+
+        if (count == 20)
+            break;
+
+        count++;
+    }
 
     return a.exec();
 }

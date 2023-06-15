@@ -51,3 +51,18 @@
 //         });
 //     }
 // }
+
+// // 检测动画状态是否被其他状态打断
+// bool IsAnimationInterrupted(string stateName)
+// {
+//     AnimatorStateInfo nextStateInfo = animator.GetNextAnimatorStateInfo(0);
+//     if (nextStateInfo.IsName(stateName))
+//     {
+//         // 如果下一个状态是指定的状态，并且过渡时间大于 0，则表示当前状态被下一个状态打断
+//         if (nextStateInfo.normalizedTime <= 0f)
+//         {
+//             return true;
+//         }
+//     }
+//     return false;
+// }

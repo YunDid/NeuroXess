@@ -352,6 +352,7 @@
 "Assets/Scripts/AnimationClient.cs"
 "Assets/Scripts/AnimationServer.cs"
 "Assets/Scripts/AnimationServerCor.cs"
+"Assets/Scripts/AnimationStateEvent.cs"
 "Assets/Scripts/CameraControl.cs"
 "Assets/Scripts/DogControl.cs"
 "Assets/Scripts/Server.cs"

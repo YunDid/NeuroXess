@@ -10,7 +10,7 @@
 // using System.Collections.Concurrent;
 // using Newtonsoft.Json;
 
-// public class AnimationServer : MonoBehaviour
+// public class AnimationServerEvent : MonoBehaviour
 // {
 //     private TcpListener tcpListener;
 //     private TcpClient connectedClient;

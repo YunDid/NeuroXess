@@ -99,9 +99,11 @@
      > 问题在于这三种状态是否需要状态直接的切换，还是说仅仅想moba游戏一样直接触发技能那种就行.
      >
      > **状态只能触发一次，具化需求时需要看一下具体的接口下的动画切片调用逻辑**
+  >
+     > 接口改动，animator.Play(AnimationName,0,0); 设置播放起始点为0便可以重复播放.
 
    - 通过旧版 Animation 直接触发动画，而不是动画的切换. - 舍弃
-
+   
      > 如果不需要过渡，只需要单独每个动画播放结束后复原即可.
 
 **目前并不理解需求目标，需要完成这个阶段后再次对接.**
@@ -144,13 +146,15 @@
   2. 通过任务队列调度动画，或者说通过动画切片来调度动画，没有办法实时同步，因为动画切片能够控制的只有动画播放的速度而不是模型的实时坐标(模型的实时坐标位置写入独自拿不来，理论可行，但是认知不足)，如果说控制两个状态的切换来实现模拟，为什么不直接一个行走动画切片来控制播放速度完成模拟呢？因为动画切片的转换，或者说过渡都是必须在上一动画切片结束才能开始过渡.
   3. 目前可能实现的较为准确的模拟是可以控制左右腿状态的不同播放速度，左腿动画一个实时速度，右腿动画一个实时速度.
 
-- **动画切片的划分以及速度调整问题.**e
+- **动画切片的划分以及速度调整问题.**
 
   > 1381 - 1390 迈左腿.
   >
   > 1390 - 1401 迈右腿.
   >
   > 设置 Wrap mode 为 once，因为 loop 会设置最后一帧将位置还原，导致动画不流畅.
+  >
+  > 一帧 1/12 s.
 
 - 通信走什么？
 
@@ -433,11 +437,14 @@ public class AnimationServer : MonoBehaviour
 
 2. 基于事件信号实现实时通信.
 
-   > 若客户端发送的信号过快又该怎么办？
+   > 动画播放接口的调用可以是实时的，但是切片播放无法实时，会被打断.
    >
-   > 动画切片的播放需要时间，客户端发送间隔也有一个时间量，当两者不统一时，怎么办，也就是说播一个动画切片的时候，客户端可能发了3个信号，如何处理.
+   > 若客户端发送的信号过快又该怎么办？
 
-3. 那如果结合事件信号于消息队列呢？
+   - 动画切片的播放需要时间，客户端发送间隔也有一个时间量，当两者不统一时，怎么办，也就是说播一个动画切片的时候，客户端可能发了3个信号，如何处理.
+   - 当客户端直接发多个数据的时候，Sever 调用接口的时机应该是实时的，但是切片的播放会有时间，因此再来一个事件会直接打断当前切片并播放另一个切片.
+
+3. 那如果结合事件信号于与消息队列呢？
 
    > 
 
@@ -475,15 +482,15 @@ public class AnimationServer : MonoBehaviour
 
      > 断开连接的设置不是很好，Sever 端是通过判断是否已经不发数据了，不发则直接断开，但是这个断开连接请求应该是客户端先发，**接口还不清楚.**
 
-- 若客户端发送的是一个字段，该如何解析呢？
+- 若客户端发送的是一个字段，该如何解析呢？**- 解决**
 
   > Tcp 网络通信传输基于字节数组，因此对应数据结构的发送需要基于协议去解析.
   >
-  > **等后续再去解决这个问题.**
-
-- **对于客户端连续发送的数据该如何处理？**
-
-  > 字节流需要切割吗？还是每次可以是一个完整的字段.
+  > Server 字段 <-> 字节流 <-> Client 字段
+  >
+  > 基于 Json 格式进行数据字段的传输.
+  >
+  > Unity 通过 UPM 安装 Json 依赖即可.
 
 - 摄像机的移动. **- 解决**
 
@@ -495,14 +502,6 @@ public class AnimationServer : MonoBehaviour
   >
   > 根据鼠标的当前位置或者键盘按下的轴值来控制旋转以及移动的增量.
 
-- 动画切片是否还有可以暴露的属性接口.
-
-  > 先通过Json实现多字段传输的通道，再找.
-
-- 多加几种状态.
-
-  > 出现切片打断的情况时再找.
-
 - 接收到信号时发送当前状态，显示当前切片的播放状态. **- 解决** 
 
   > 设置发送字段，若标志位为true，则返回当前状态.
@@ -513,15 +512,94 @@ public class AnimationServer : MonoBehaviour
 
 - 添加一个退出程序的UI.
 
-- 如何验证当前动画切片的播放时正常的？
+- 动画切片是否还有可以暴露的属性接口.
 
-- 数据请求的Timing需要进一步探究.
+  > 先通过Json实现多字段传输的通道，再找.
 
-- 如何验证一个动画切片的播放是正常的？
+- 多加几种状态.
 
-- 当前正在播放的和任务队列中存放的状态不一样.
+  > 出现切片打断的情况时再找.
+
+- 如何验证当前动画切片的播放是正常的？
+
+  > 全局变量 isPlayingAnimation 检测当前是否在播放动画.
+
+- 当前正在播放的和任务队列中存放的状态不一样. **- 解决**
 
   > 也就是当前播放的状态播放完后的下一个状态并不一定是现在客户端发的.
+  >
+  > 每播放一个切片，便把切片状态保留缓存.
+  >
+  > 注意哦，缓存在Server的更新是实时的，所以客户端一请求，直接发缓存即可.
+
+- 在任意时刻发起状态请求时，我需要知道上一个动画切片是否播放完毕并且正常播放，播放完毕我直接播放下一个，没有播放完毕在添加控制逻辑，控制下一动画切片的播放. **- 解决** 
+
+1. 通过事件订阅委托，状态播放开始或者完毕直接触发start与end事件通知，再更新状态.
+
+2. 值得注意的是Animator中的每个状态都要订阅，否则只能监控一种状态的播放情况.
+
+  
+
+  1. 任意时刻，能够获取到是否正常播放(播放完毕且未被打断)
+
+     > 现在虽然可以获取到当前动画切片的状态信息，但是没有办法通过当前方法判断动画切片是否结束，因此当切片结束转换到下一状态时，上一个状态的信息已经被新的状态信息覆盖，不会检测到 stateInfo.normalizedTime >= 1 的情况，只会显示下一状态的时间，上一个需要检测的状态stateInfo.normalizedTime 只会趋近于1
+     >
+     > 所以需要两个状态参数，判断当前状态名与上一状态名是否相同来判断是否结束. **- 舍弃**
+
+  2. 控制逻辑的添加.
+
+     > **仍通过打断事件通知，待完善.**
+
+  3. 测试一下设置过渡，能否实时输出动画播放的状态信息.
+
+     > 通过动画事件更新状态信息并实时返回.
+
+  4. 区分开是 Animator 是否在播放还是 状态是否在播放.
+
+     > 如何判断 Animator 是否在播放，注意空状态的使用.
+
+  6. 任务队列依次弹出，动画播放问题.
+
+     > 动画播放接口调用后，动画的播放和队列的弹出不是顺序同步的，就是说不是弹出一个播放一个，而是弹出多个，播放多个，一帧内如果没有间隔，动画的播放会被频繁的打断，导致只显示一个.
+
+  7. 空动画状态问题. **- 解决**
+
+     > 不为空状态附件事件行为组件，这样在进入空状态时，默认为无动画切片在播放，也不会触发动画事件.
+
+  7. 动画播放一顿一顿的. **- 解决**
+
+     > 两个动画切片的时长不同.
+     >
+     > 并且动画切换的时机没匹配.
+     >
+     > 目前是设置了Animator.speed 与 下一动画播放前的等待时间的映射关系，设置了对应的等待时间.
+
+     ``` c# 
+     // 等待动画播放完毕
+     // yield return new WaitUntil(() => IsAnimationFinished());
+     // 等待一段时间
+     float time = 0.45f / (animation.Speed);
+     ```
+
+     
+
+  9. 对于当前是否播放动画的状态判断需要更新，才能保证无闪顿动画切换.
+
+  10. 使用队列处理的延时. **- 解决**
+
+      > 必须，是必须等待上一个动画播放完毕再处理下一个.
+      >
+      > 不然会直接打断，动画接口的调用和动画的播放不是顺序同步的，动画会被第二次调用打断.
+
+- 动画的过渡，不要复原到原始状态，而是保持不动，需要复原时才复原. **- 解决**
+
+  > write defaut 关闭即可保持原状态.
+  
+- 状态变量的控制需要忽略掉 Idle 状态
+
+- 需要在所有动画播放完毕后恢复 Idle 状态
+
+- 第一帧动画播放需要设置过渡
 
 v3.0 ReceiveMessages 阻塞问题完善.
 
@@ -1232,6 +1310,530 @@ int main(int argc, char *argv[])
     animationData.NeedReturnStateFlag = true;
 
     SendAnimationCommand(animationData);
+
+    return a.exec();
+}
+
+```
+
+# 2023.6.15
+
+v4.0 连续传输数据版
+
+- Unity Server
+
+``` c# 
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading;
+using System.Collections.Concurrent;
+using Newtonsoft.Json;
+
+public class AnimationServer : MonoBehaviour
+{
+    private TcpListener tcpListener;
+    private TcpClient connectedClient;
+
+    public Animator animator;
+    public int port = 8888;
+    private bool isPlayingAnimation = false;
+
+    // 使用队列存储客户端事件消息
+    // private Queue<AnimationData> animationQueue = new Queue<AnimationData>();
+
+    // 保护共享资源的互斥锁
+    //private object queueLock = new object();
+
+    // ConcurrentQueue Unity 内部已经实现了线程安全，无需自行加锁
+    private ConcurrentQueue<AnimationData> animationQueue = new ConcurrentQueue<AnimationData>();
+    // 获取 Behaviour 组件数组(包含动画状态事件)
+    AnimationStateEvent[] StateEvents;
+    // 当前播放动画的状态信息
+    AnimationStateData CurrentStateInfo;
+    // 协程标志位，确保只有一个协程执行
+    bool isCoroutineRunning = false;
+    // 是否有除Idle外的其他状态在播放
+    private bool isPlaying = false;
+
+    public class AnimationData
+    {   
+        // 动画切片名称
+        public string AnimationName { get; set; }
+        // 动画切片的播放速度
+        public float Speed { get; set; }
+        // 客户端 : 设置是否需要返回当前动画切片的播放状态
+        public bool NeedReturnStateFlag { get; set; }
+    }
+
+    public class AnimationStateData
+    {
+        // 动画切片名称
+        public string AnimationName { get; set; }
+        // 动画切片的播放速度
+        public float Speed { get; set; }
+        // 服务端 : 返回当前动画切片的播放状态
+        public bool IsCorrect { get; set; }
+        // 服务端 : 当前是否在播放动画
+        public bool IsPlaying { get; set; }
+        // 检测动画是否播放完毕
+        public bool IsEndPlaying { get; set; }
+        // 检测动画是否被打断
+        public bool IsInterrupted { get; set; }
+
+    }
+
+    private void Start()
+    {
+        // 获取动画组件的引用
+        animator = GetComponent<Animator>();
+
+        // 获取 AnimationStateEvent 脚本组件数据并依次订阅事件.
+
+        StateEvents = animator.GetBehaviours<AnimationStateEvent>();
+
+        foreach (var stateEvent in StateEvents)
+        {
+            stateEvent.StateEntered += OnStateEntered;
+            stateEvent.StateExited += OnStateExited;
+        }
+
+        // 创建动画状态信息缓存，内存释放甭管，先运行，内部应该有默认初始化操作
+        CurrentStateInfo = new AnimationStateData();
+        CurrentStateInfo.IsEndPlaying = true;
+
+        // 启动服务器
+        tcpListener = new TcpListener(IPAddress.Any, port);
+        tcpListener.Start();
+        Debug.Log("Server started. Waiting for client...");
+
+        // 在后台线程监听客户端连接
+        System.Threading.Tasks.Task.Run(() => ListenForClient());
+        // test();
+
+        // 启动协程监听队列
+        // StartCoroutine(ProcessReceivedAnimations());
+    }
+
+    void test() 
+    {
+       int count = 0;
+       while(true)
+       {
+            AnimationData TestAni = new AnimationData();
+            if(count % 2==0)
+                TestAni.AnimationName = "LeftLeg";
+            else
+                TestAni.AnimationName = "RightLeg";
+            TestAni.Speed = 1.0f;
+            animationQueue.Enqueue(TestAni);
+
+            count++;
+            if(count == 100) 
+            {
+                break;
+            }
+       }
+    }
+
+    private void Update()
+    {
+        // 在主线程中处理接收到的动画事件并执行动画播放操作
+        // if(!CurrentStateInfo.IsPlaying)
+        // ProcessReceivedAnimations();
+        // 启动协程播放动画，防止被频繁打断导致动画仅播放一个
+        if (!isCoroutineRunning && !animationQueue.IsEmpty)
+        {
+            StartCoroutine(ProcessReceivedAnimations());
+        }
+
+        // 逐帧输出当前状态信息
+        Debug.Log("AnimationName : " + CurrentStateInfo.AnimationName);
+        Debug.Log("Speed : " + CurrentStateInfo.Speed);
+        Debug.Log("IsPlaying : " + CurrentStateInfo.IsPlaying);
+        Debug.Log("IsCorrect + " + CurrentStateInfo.IsCorrect);
+        Debug.Log("IsEndPlaying : " + CurrentStateInfo.IsEndPlaying);
+        Debug.Log("IsInterrupted : " + CurrentStateInfo.IsInterrupted);
+    }
+
+    private void OnDisable()
+    {
+        // 获取 AnimationStateEvent 脚本组件数据并依次取消订阅事件.
+        foreach (var stateEvent in StateEvents)
+        {
+            stateEvent.StateEntered -= OnStateEntered;
+            stateEvent.StateExited -= OnStateExited;
+        }
+    }
+
+    private void OnStateEntered(string stateName)
+    {
+        
+        isPlaying = true;
+        // 更新 CurrentStateInfo 字段属性，根据状态名称执行相应操作
+
+        CurrentStateInfo.AnimationName = stateName;
+        CurrentStateInfo.Speed = animator.speed;
+        CurrentStateInfo.IsPlaying = true;
+        // 理论上被打断的时候设置为 fasle ，需要完善
+        CurrentStateInfo.IsCorrect = true;
+        CurrentStateInfo.IsEndPlaying = false;
+        CurrentStateInfo.IsInterrupted = false;
+        // Debug.Log(stateName + " : 开始播放");
+    }
+
+    private void OnStateExited(string stateName)
+    {
+        
+        isPlaying = false;
+        // 更新 CurrentStateInfo 字段属性，根据状态名称执行相应操作
+        CurrentStateInfo.AnimationName = "";
+        CurrentStateInfo.Speed = animator.speed;
+        CurrentStateInfo.IsPlaying = false;
+        // 理论上被打断的时候设置为 fasle ，需要完善
+        CurrentStateInfo.IsCorrect = true;
+        CurrentStateInfo.IsEndPlaying = true;
+        CurrentStateInfo.IsInterrupted = false;
+        // Debug.Log(stateName + " : 播放完毕");
+    }
+
+
+    private void ListenForClient()
+    {
+        connectedClient = tcpListener.AcceptTcpClient();
+        Debug.Log("Client connected.");
+
+        // 在后台线程监听客户端消息
+        System.Threading.Tasks.Task.Run(() => ReceiveMessages());
+    }
+ 
+    private void ReceiveMessages()
+    {
+        byte[] buffer = new byte[1024];
+
+        // 读取或写入字节数据的对象.
+        NetworkStream stream = connectedClient.GetStream();
+
+        try
+        {
+            while (connectedClient.Connected)
+            {
+                // 返回读取字节流中的实际字节数.
+                // 阻塞方法，若没有字节可读，将阻塞当前线程.
+                int bytesRead = stream.Read(buffer, 0, buffer.Length);
+                // 这个 bytesRead 的指针是否会移动，否则暂存缓存会导致判断不准确.
+                if (bytesRead > 0)
+                {
+                    // string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+
+                    // Debug.Log("Test log animationName: " + message);
+
+                    // // 将接收到的动画事件添加到队列中
+                    // animationQueue.Enqueue(message);
+
+                    // 添加其他根据接收字段需要处理的事件.
+                    string jsonString = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+
+                    // 反序列化 JSON 字符串为自定义数据结构
+                    AnimationData receivedData = JsonConvert.DeserializeObject<AnimationData>(jsonString);
+
+                    // 可以访问 receivedData 的各个字段并进行相应处理
+                    Debug.Log("ReceiveMessages AnimationName: " + receivedData.AnimationName);
+                    Debug.Log("ReceiveMessages Speed: " + receivedData.Speed);
+
+                    if (receivedData.NeedReturnStateFlag)
+                    {
+                       System.Threading.Tasks.Task.Run(() => SendMessages(ref stream));
+                    }
+
+                    // 没有加条件处理消息字段的可靠性.
+                    // 将接收到的动画属性字段入队列.
+                    animationQueue.Enqueue(receivedData);
+                }
+                else
+                {
+                    // 客户端断开连接
+                    // 可以于此设置延时等待.
+                    break;
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.Log("Error receiving message: " + e.Message);
+        }
+
+        stream.Close();
+        connectedClient.Close();
+        Debug.Log("Client disconnected.");
+
+        // 重新监听
+        System.Threading.Tasks.Task.Run(() => ListenForClient());
+    }
+
+    private void SendMessages(ref NetworkStream stream) 
+    {
+        // 创建返回对象.
+        // AnimationStateData returnStateData = new AnimationStateData();
+        // returnStateData.AnimationName = "This is the return state message.";
+        // returnStateData.Speed = 10;
+        // returnStateData.IsCorrect = true;
+
+        // Serialize the response object to JSON
+        string response = JsonConvert.SerializeObject(CurrentStateInfo);
+
+        // Send the response to the client
+        byte[] responseBuffer = Encoding.ASCII.GetBytes(response);
+        stream.Write(responseBuffer, 0, responseBuffer.Length);
+    }
+
+    private void PlayAnimation(AnimationData animation)
+    {
+        // 在主线程中触发模型动画
+        UnityMainThreadDispatcher.Instance.Enqueue(() =>
+        {
+           animator.speed = animation.Speed;
+           animator.Play(animation.AnimationName, 0, 0);
+           isPlayingAnimation = true;
+
+        //    Debug.Log("PlayAnimation speed: " + animation.Speed);
+        });
+        // Debug.Log("Error receiving message: " + animationName);
+        // Debug.Log("PlayAnimation animationName: " + animation.AnimationName);
+
+    }
+
+    private IEnumerator ProcessReceivedAnimations()
+    {
+        isCoroutineRunning = true;
+
+        // 在主线程中处理动画事件队列
+        while (animationQueue.TryDequeue(out AnimationData animation))
+        {
+            Debug.Log("ProcessReceivedAnimations QueueLength : " + animationQueue.Count);
+            // 处理动画事件
+            // Debug.Log("ProcessReceivedAnimations animationName: " + animation.AnimationName);
+            // Debug.Log("ProcessReceivedAnimations animationSpeed: " + animation.Speed);
+            // 通过字段属性控制切片的播放
+            PlayAnimation(animation);
+            // 等待动画播放完毕
+            // yield return new WaitUntil(() => IsAnimationFinished());
+            // 等待一段时间
+            float time = 0.45f / (animation.Speed);
+            yield return new WaitForSeconds(time);
+        }
+
+        isCoroutineRunning = false;
+    }
+
+    // 检测动画状态是否播放完毕
+    bool IsAnimationFinished()
+    {
+        return !isPlaying;
+    }
+
+}
+```
+
+- Qt Client
+
+``` c++ 
+//#include <QCoreApplication>
+//#include <QTcpSocket>
+//#include <QJsonDocument>
+//#include <QJsonObject>
+//#include <QTimer>
+
+////void SendAnimationCommand(const QString& command)
+////{
+////    QTcpSocket socket;
+////    socket.connectToHost("127.0.0.1", 8888);
+////    int count = 0;
+
+////    if (socket.waitForConnected())
+////    {
+////        QByteArray data = command.toUtf8();
+////        QTimer* timer = new QTimer(); // 使用 QTimer 对象
+////        int delay = 1000; // 设置延迟时间为 1 秒
+
+//////        while (true) {
+
+//////            count++;
+//////            timer->setInterval(delay);
+//////            socket.write(data);
+//////            socket.waitForBytesWritten();
+//////            if(count == 10)
+//////                break;
+//////        }
+////        socket.write(data);
+////        socket.waitForBytesWritten();
+////        socket.disconnectFromHost();
+////        while(true) {
+
+////        }
+////    }
+////    else
+////    {
+////        qDebug() << "Failed to connect to server.";
+////    }
+////}
+
+
+//void SendAnimationCommand(const QJsonObject& commandObject)
+//{
+//    QTcpSocket socket;
+//    socket.connectToHost("127.0.0.1", 8888);
+
+//    if (socket.waitForConnected())
+//    {
+//        QJsonDocument jsonDoc(commandObject);
+//        QByteArray jsonData = jsonDoc.toJson();
+
+//        socket.write(jsonData);
+//        socket.waitForBytesWritten();
+//        socket.disconnectFromHost();
+//    }
+//    else
+//    {
+//        qDebug() << "Failed to connect to server.";
+//    }
+//}
+
+//int main(int argc, char *argv[])
+//{
+//    QCoreApplication a(argc, argv);
+
+//    QJsonObject commandObject;
+//    commandObject["AnimationName"] = "LeftLeg";
+//    commandObject["Speed"] = 5;
+//    // 添加其他字段...
+
+//    SendAnimationCommand(commandObject);
+
+//    return a.exec();
+//}
+
+#include <QCoreApplication>
+#include <QTcpSocket>
+#include <QTimer>
+#include <QDebug>
+#include <QJsonDocument>
+#include <QJsonObject>
+
+struct AnimationData
+{
+    QString AnimationName;
+    float Speed;
+    bool NeedReturnStateFlag;
+};
+
+struct ReturnStateData
+{
+    QString AnimationName;
+    // 当前动画的播放速度
+    float Speed;
+    bool IsCorrect;
+    // 检测当前是否有动画在播放
+    bool IsPlaying;
+    // 检测动画是否播放完毕
+    bool IsEndPlaying;
+    // 检测动画是否被打断
+    bool IsInterrupted;
+};
+
+void ReceiveAnimationCommand(QTcpSocket& socket);
+
+void SendAnimationCommand(const AnimationData& animationData,QTcpSocket& socket)
+{
+
+    if (socket.waitForConnected())
+    {
+        // 序列化数据
+        QJsonObject jsonObject;
+        jsonObject["AnimationName"] = animationData.AnimationName;
+        jsonObject["Speed"] = animationData.Speed;
+        jsonObject["NeedReturnStateFlag"] = animationData.NeedReturnStateFlag;
+
+        QJsonDocument jsonDocument(jsonObject);
+        QByteArray jsonData = jsonDocument.toJson();
+
+        // 发送 Json 数据
+        socket.write(jsonData);
+        socket.waitForBytesWritten();
+
+        // 检查状态位，若需要返回状态信息，则阻塞等待信息
+        if (animationData.NeedReturnStateFlag)
+        {
+            ReceiveAnimationCommand(socket);
+        }
+    }
+    else
+    {
+        qDebug() << "Failed to connect to server.";
+    }
+}
+
+void ReceiveAnimationCommand(QTcpSocket& socket)
+{
+    // 等待服务端响应
+    socket.waitForReadyRead();
+
+    // 读取响应
+    QByteArray responseData = socket.readAll();
+    QJsonDocument responseJson = QJsonDocument::fromJson(responseData);
+    QJsonObject responseObj = responseJson.object();
+
+    // 反序列化数据
+    ReturnStateData returnStateData;
+    returnStateData.AnimationName = responseObj["AnimationName"].toString();
+    // 强转int不对，先赋值整数测，或者字段类型改为daouble
+    returnStateData.Speed = responseObj["Speed"].toInt();
+    returnStateData.IsCorrect = responseObj["IsCorrect"].toBool();
+
+    // debug
+    qDebug() << "Received return state AnimationName: " << returnStateData.AnimationName;
+    qDebug() << "Received return state Speed: " << returnStateData.Speed;
+    qDebug() << "Received return state IsCorrect: " << returnStateData.IsCorrect;
+    qDebug() << "Received return state IsEndPlaying: " << returnStateData.IsEndPlaying;
+    qDebug() << "Received return state IsInterrupted: " << returnStateData.IsInterrupted;
+    qDebug() << "Received return state IsPlaying: " << returnStateData.IsPlaying;
+}
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+
+    AnimationData animationData;
+    animationData.AnimationName = "LeftLeg";
+    animationData.Speed = 1.0f;
+    animationData.NeedReturnStateFlag = true;
+
+    QTcpSocket socket;
+    socket.connectToHost("127.0.0.1", 8888);
+
+    int count = 0;
+
+    while(true)
+    {
+
+        // 播放 20 次动画
+
+        if(count % 2 == 0)
+            animationData.AnimationName = "LeftLeg";
+        else
+            animationData.AnimationName = "RightLeg";
+
+        SendAnimationCommand(animationData, socket);
+
+        if (count == 20)
+            break;
+
+        count++;
+    }
 
     return a.exec();
 }
