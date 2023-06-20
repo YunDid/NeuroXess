@@ -353,12 +353,14 @@
 "Assets/Scripts/AnimationServer.cs"
 "Assets/Scripts/AnimationServerCor.cs"
 "Assets/Scripts/AnimationStateEvent.cs"
+"Assets/Scripts/Animatorspeed.cs"
 "Assets/Scripts/CameraControl.cs"
 "Assets/Scripts/DogControl.cs"
 "Assets/Scripts/Server.cs"
 "Assets/Scripts/TestEvent.cs"
 "Assets/Scripts/TestTime.cs"
 "Assets/Scripts/UnityMainThreadDispatcher.cs"
+"Assets/Scripts/WindowMaxAndMin.cs"
 -langversion:9.0
 
 /deterministic

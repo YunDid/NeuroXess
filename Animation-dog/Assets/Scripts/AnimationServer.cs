@@ -305,7 +305,7 @@ public class AnimationServer : MonoBehaviour
         isCoroutineRunning = false;
     }
 
-    // 检测动画状态是否播放完毕
+    // 检测动画状态是否播放完毕 尚不完善.
     bool IsAnimationFinished()
     {
         return !isPlaying;

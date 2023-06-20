@@ -11,6 +11,7 @@ public class DogControl : MonoBehaviour
         // 获取动画组件的引用
         animator = GetComponent<Animator>();
         CurrentStateInfo = new AnimationStateData();
+        // count0 = 10;
 
         // 获取 AnimationStateEvent 脚本组件数据并依次订阅事件.
 
@@ -73,10 +74,10 @@ public class DogControl : MonoBehaviour
         // {
         //     Debug.Log("No Animation is Playing.");
         // }
-
         // 检测输入并触发相应的动画状态转换
         if (Input.GetKeyDown(KeyCode.R))
         {
+            // count0 = count0 - count0/2;
             PlayAnimation("LeftLeg");
         }
         else if (Input.GetKeyDown(KeyCode.F))
@@ -87,6 +88,8 @@ public class DogControl : MonoBehaviour
         {
             PlayAnimation("Idle");
         }
+
+        // animator.speed = count0;
 
     }
 
@@ -168,10 +171,12 @@ public class DogControl : MonoBehaviour
     }
 
     private Animator animator;
-    public float speed = 1;
+    public float speed = 5;
 
     private AnimationStateData CurrentStateInfo;
     private AnimationStateData PreStateInfo;
     private bool isPlaying = false;
     AnimationStateEvent[] StateEvents;
+    
+    // public float count0;
 }

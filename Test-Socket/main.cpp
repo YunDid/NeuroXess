@@ -165,7 +165,7 @@ int main(int argc, char *argv[])
 
     AnimationData animationData;
     animationData.AnimationName = "LeftLeg";
-    animationData.Speed = 1.0f;
+    animationData.Speed = 2.0f;
     animationData.NeedReturnStateFlag = true;
 
     QTcpSocket socket;
