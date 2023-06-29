@@ -56,6 +56,7 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Animatorspeed.cs" />
     <Compile Include="Assets\Scripts\TestTime.cs" />
     <Compile Include="Assets\Scripts\AnimationStateEvent.cs" />
     <Compile Include="Assets\Scripts\DogControl.cs" />
@@ -67,7 +68,6 @@
     <Compile Include="Assets\Scripts\AnimationClient.cs" />
     <Compile Include="Assets\Scripts\AnimationServerCor.cs" />
     <Compile Include="Assets\Scripts\CameraControl.cs" />
-    <Compile Include="Assets\Scripts\Animatorspeed.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Dog Pack\Dobermann\Model\Dobermann.txt" />

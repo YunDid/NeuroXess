@@ -34,11 +34,20 @@ public class AnimationServer : MonoBehaviour
     bool isCoroutineRunning = false;
     // 是否有除Idle外的其他状态在播放
     private bool isPlaying = false;
+    // 测试时间
+    private float PreTestTime = 0;
+    private float CurTestTime = 0;
+    private float CycleTestTime = 0;
+
+    // 测试
+    private int countttt = 0;
 
     public class AnimationData
     {   
         // 动画切片名称
         public string AnimationName { get; set; }
+        // 真实的周期间隔
+        public float CycleTime { get; set; }
         // 动画切片的播放速度
         public float Speed { get; set; }
         // 客户端 : 设置是否需要返回当前动画切片的播放状态
@@ -88,6 +97,7 @@ public class AnimationServer : MonoBehaviour
 
         // 在后台线程监听客户端连接
         System.Threading.Tasks.Task.Run(() => ListenForClient());
+
         // test();
 
         // 启动协程监听队列
@@ -104,11 +114,11 @@ public class AnimationServer : MonoBehaviour
                 TestAni.AnimationName = "LeftLeg";
             else
                 TestAni.AnimationName = "RightLeg";
-            TestAni.Speed = 1.0f;
+            TestAni.Speed = 0.5f;
             animationQueue.Enqueue(TestAni);
 
             count++;
-            if(count == 100) 
+            if(count == 10) 
             {
                 break;
             }
@@ -123,16 +133,17 @@ public class AnimationServer : MonoBehaviour
         // 启动协程播放动画，防止被频繁打断导致动画仅播放一个
         if (!isCoroutineRunning && !animationQueue.IsEmpty)
         {
-            StartCoroutine(ProcessReceivedAnimations());
+           StartCoroutine(ProcessReceivedAnimations());
         }
+        // ProcessReceivedAnimations();
 
         // 逐帧输出当前状态信息
-        Debug.Log("AnimationName : " + CurrentStateInfo.AnimationName);
-        Debug.Log("Speed : " + CurrentStateInfo.Speed);
-        Debug.Log("IsPlaying : " + CurrentStateInfo.IsPlaying);
-        Debug.Log("IsCorrect + " + CurrentStateInfo.IsCorrect);
-        Debug.Log("IsEndPlaying : " + CurrentStateInfo.IsEndPlaying);
-        Debug.Log("IsInterrupted : " + CurrentStateInfo.IsInterrupted);
+        // Debug.Log("AnimationName : " + CurrentStateInfo.AnimationName);
+        // Debug.Log("Speed : " + CurrentStateInfo.Speed);
+        // Debug.Log("IsPlaying : " + CurrentStateInfo.IsPlaying);
+        // Debug.Log("IsCorrect + " + CurrentStateInfo.IsCorrect);
+        // Debug.Log("IsEndPlaying : " + CurrentStateInfo.IsEndPlaying);
+        // Debug.Log("IsInterrupted : " + CurrentStateInfo.IsInterrupted);
     }
 
     private void OnDisable()
@@ -217,8 +228,8 @@ public class AnimationServer : MonoBehaviour
                     AnimationData receivedData = JsonConvert.DeserializeObject<AnimationData>(jsonString);
 
                     // 可以访问 receivedData 的各个字段并进行相应处理
-                    Debug.Log("ReceiveMessages AnimationName: " + receivedData.AnimationName);
-                    Debug.Log("ReceiveMessages Speed: " + receivedData.Speed);
+                    // Debug.Log("ReceiveMessages AnimationName: " + receivedData.AnimationName);
+                    // Debug.Log("ReceiveMessages Speed: " + receivedData.Speed);
 
                     if (receivedData.NeedReturnStateFlag)
                     {
@@ -268,17 +279,30 @@ public class AnimationServer : MonoBehaviour
 
     private void PlayAnimation(AnimationData animation)
     {
+        
+        
+        isPlaying = true;
         // 在主线程中触发模型动画
         UnityMainThreadDispatcher.Instance.Enqueue(() =>
         {
+
+            
+            // 如果当前动画状态正在播放，则等待
+            // if (!IsAnimationFinished()) 
+            // {
+                
+            // }
+            
            animator.speed = animation.Speed;
            animator.Play(animation.AnimationName, 0, 0);
-           isPlayingAnimation = true;
+        //    animator.Play(animation.AnimationName);
 
-        //    Debug.Log("PlayAnimation speed: " + animation.Speed);
+
+            //    Debug.Log("PlayAnimation speed: " + animation.Speed);
         });
         // Debug.Log("Error receiving message: " + animationName);
         // Debug.Log("PlayAnimation animationName: " + animation.AnimationName);
+        // yield return new WaitUntil(() => IsAnimationFinished());
 
     }
 
@@ -289,17 +313,40 @@ public class AnimationServer : MonoBehaviour
         // 在主线程中处理动画事件队列
         while (animationQueue.TryDequeue(out AnimationData animation))
         {
-            Debug.Log("ProcessReceivedAnimations QueueLength : " + animationQueue.Count);
+            // // 记录时间
+            // CurTestTime = Time.time;
+            // // 测试计数
+            // countttt++;
+
+            // Debug.Log("ProcessReceivedAnimations QueueLength : " + animationQueue.Count);
             // 处理动画事件
             // Debug.Log("ProcessReceivedAnimations animationName: " + animation.AnimationName);
             // Debug.Log("ProcessReceivedAnimations animationSpeed: " + animation.Speed);
             // 通过字段属性控制切片的播放
+            // StartCoroutine(PlayAnimation(animation));
+
             PlayAnimation(animation);
+
             // 等待动画播放完毕
             // yield return new WaitUntil(() => IsAnimationFinished());
-            // 等待一段时间
-            float time = 0.45f / (animation.Speed);
-            yield return new WaitForSeconds(time);
+
+            // 测试时间间隔
+
+            // if(countttt > 1) 
+            // {
+            //     Debug.Log("Unity Cycle Time: " + (CurTestTime - PreTestTime) + " Imu Cycle Time: " + CycleTestTime);
+                
+            // }
+            // else
+            // {
+            //     Debug.Log("Unity Cycle Time: " + PreTestTime + " Imu Cycle Time: " + CycleTestTime);
+            // }
+            
+            // CycleTestTime = animation.CycleTime;
+            // PreTestTime = CurTestTime;
+            // 等待一段时间，等待本次周期的真实时间
+            yield return new WaitForSeconds(animation.CycleTime);
+            // yield return null;
         }
 
         isCoroutineRunning = false;

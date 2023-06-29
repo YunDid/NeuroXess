@@ -1,0 +1,8 @@
+[submodule "extern/libworker"]
+	path = extern/libworker
+	url = git@gitlab.neuroxess.com:bci-cloud/libworker.git
+	branch = develop
+[submodule "extern/mind-explorer-decode"]
+	path = extern/mind-explorer-decode
+	url = git@gitlab.neuroxess.com:bci-cloud/mind-explorer-decode.git
+	branch = develop

@@ -1,0 +1,19 @@
+# curl -X 'POST'
+#  'http://127.0.0.1:10800/api/v1/board/init'
+#  -H 'accept: application/json'
+#  -H 'Content-Type: application/json'
+#  -d '{
+#  "acquisitionMode": 1,
+#  "sampleRate": 7
+#}'
+POST http://127.0.0.1:10800/api/v1/board/init
+accept: application/json
+Content-Type: application/json
+
+{
+  "acquisitionMode": 1,
+  "sampleRate": 7
+}
+
+###
+
