@@ -38,9 +38,14 @@ public class AnimationServer : MonoBehaviour
     private float PreTestTime = 0;
     private float CurTestTime = 0;
     private float CycleTestTime = 0;
-
+    // 计量时间点误差 
+    public Queue<float> TimeCycleQueue = new Queue<float>();
     // 测试
     private int countttt = 0;
+    // 误差计量时间
+    private float ErrorTime = 0;
+    // 等待时间
+    float WaitTime = 0;
 
     public class AnimationData
     {   
@@ -229,7 +234,7 @@ public class AnimationServer : MonoBehaviour
 
                     // 可以访问 receivedData 的各个字段并进行相应处理
                     // Debug.Log("ReceiveMessages AnimationName: " + receivedData.AnimationName);
-                    // Debug.Log("ReceiveMessages Speed: " + receivedData.Speed);
+                    // Debug.Log("ReceiveMessages CycleTime: " + receivedData.CycleTime);
 
                     if (receivedData.NeedReturnStateFlag)
                     {
@@ -282,19 +287,39 @@ public class AnimationServer : MonoBehaviour
         
         
         isPlaying = true;
+        // 减少误差累积问题
+        CurTestTime = Time.time; 
+
+        if(countttt > 1) 
+        {
+            
+            // 测试时间间隔
+            ErrorTime = CurTestTime - PreTestTime - CycleTestTime;
+            Debug.Log("Unity Cycle Time: " + (CurTestTime - PreTestTime) + " Imu Cycle Time: " + CycleTestTime + " Error Time: 0" + ErrorTime);
+            // TimeCycleQueue.Enqueue(CurTestTime - PreTestTime);
+        }
+        else
+        {
+            Debug.Log("000 Unity Cycle Time: " + PreTestTime + " Imu Cycle Time: " + CycleTestTime + " Error Time: " + ErrorTime);
+            // TimeCycleQueue.Enqueue(PreTestTime);
+        }
+
+
+        // WaitTime = animation.CycleTime - ErrorTime;
+        // float waitTime = animation.CycleTime - ErrorTime;
+        
+        CycleTestTime = animation.CycleTime;
+        PreTestTime = CurTestTime;
+
+
         // 在主线程中触发模型动画
         UnityMainThreadDispatcher.Instance.Enqueue(() =>
         {
 
-            
-            // 如果当前动画状态正在播放，则等待
-            // if (!IsAnimationFinished()) 
-            // {
-                
-            // }
-            
-           animator.speed = animation.Speed;
-           animator.Play(animation.AnimationName, 0, 0);
+            animator.speed = animation.Speed;
+        //    animator.speed = 0.5f;
+
+            animator.Play(animation.AnimationName, 0, 0);
         //    animator.Play(animation.AnimationName);
 
 
@@ -313,40 +338,25 @@ public class AnimationServer : MonoBehaviour
         // 在主线程中处理动画事件队列
         while (animationQueue.TryDequeue(out AnimationData animation))
         {
-            // // 记录时间
-            // CurTestTime = Time.time;
-            // // 测试计数
-            // countttt++;
-
+            
             // Debug.Log("ProcessReceivedAnimations QueueLength : " + animationQueue.Count);
             // 处理动画事件
             // Debug.Log("ProcessReceivedAnimations animationName: " + animation.AnimationName);
             // Debug.Log("ProcessReceivedAnimations animationSpeed: " + animation.Speed);
             // 通过字段属性控制切片的播放
             // StartCoroutine(PlayAnimation(animation));
+            // 测试计数
+            countttt++;
 
             PlayAnimation(animation);
 
             // 等待动画播放完毕
             // yield return new WaitUntil(() => IsAnimationFinished());
-
-            // 测试时间间隔
-
-            // if(countttt > 1) 
-            // {
-            //     Debug.Log("Unity Cycle Time: " + (CurTestTime - PreTestTime) + " Imu Cycle Time: " + CycleTestTime);
-                
-            // }
-            // else
-            // {
-            //     Debug.Log("Unity Cycle Time: " + PreTestTime + " Imu Cycle Time: " + CycleTestTime);
-            // }
-            
-            // CycleTestTime = animation.CycleTime;
-            // PreTestTime = CurTestTime;
+  
             // 等待一段时间，等待本次周期的真实时间
-            yield return new WaitForSeconds(animation.CycleTime);
+            yield return new WaitForSeconds(animation.CycleTime - ErrorTime);
             // yield return null;
+
         }
 
         isCoroutineRunning = false;

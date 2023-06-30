@@ -98,6 +98,28 @@ def loadData(Right,Left):
     # loguru.logger.debug(Right)
     # loguru.logger.debug(Left)
 
+def TestloadData():
+
+    with open('Max.txt', 'r') as file:
+        for line in file:
+            # 去除每行末尾的换行符
+            line = line.strip()
+            # 检查内容是否为空或只包含空白字符
+            if line:
+                # 将内容转换为浮点数类型，并添加到列表中
+                with open('output.txt', 'a') as file:
+                    # 设置输出分隔符为英文逗号
+                    separator = ','
+                    print(float(line) / 40 * 33 + 2, file=file)
+
+    # with open('Min.txt', 'r') as file:
+    #     for line in file:
+    #         # 去除每行末尾的换行符
+    #         line = line.strip()
+    #         # 检查内容是否为空或只包含空白字符
+    #         if line:
+    #             # 将内容转换为浮点数类型，并添加到列表中
+    #             Left.append(float(line))
 def TestCycle(CacheTime_data):
 
     # 获取预测周期时间点
@@ -226,21 +248,27 @@ def TestCycle2(CacheTime_data):
     # 显示
     ply.show()
 
-def Test2(imu_data,Brain_Data,Post_imu_data):
+def Test2(imu_data,Brain_Data_Pri,Brain_Data_Act,Post_imu_data):
 
     # 测试起始位移点
-    draw(Brain_Data, 1, 0, 400, 'green', 'actual', 0)
-    draw(Post_imu_data, 1, 3600, 4000, 'blue', 'imu', 0)
+    # draw(Brain_Data, 1, 0, 400, 'green', 'actual', 0)
+    # draw(Post_imu_data, 1, 3600, 4000, 'blue', 'imu', 0)
+
+    # loguru.logger.debug(len(imu_data))
+
+    draw(Brain_Data_Pri, 1, 600, 1200, 'green', 'prediction', 0, 0.1, 100)
+    draw(imu_data, 0, 16800, 19200, 'blue', 'imu', 0, 0.025, 1)
+    draw(Post_imu_data, 1, 4200, 4800, 'red', 'Imu_x', 0, 0.1, 200)
 
 
     # 绘制加速度离散点+直线，一同绘制时需要设置0.25倍的x轴缩放 40hz
-    # draw(imu_data, 0, 0, 400, 'green', 'A', 0, 0.025, 1)
+    # draw(imu_data, 0, 0, 4800, 'green', 'A', 0, 0.025, 1)
     # draw(imu_data, 0, 0, 2400, 'green', 'A', 0, 1, 1)
 
     # 绘制速度离散点+直线 10hz
     # draw(Post_imu_data,0, 0, 100,'black', 'V', 0, 0.1, 10)
     # 绘制位移离散点+直线 10hz
-    # draw(Post_imu_data, 1, 0, 100, 'blue', 'Brain', 0, 0.1, 100)
+    # draw(Post_imu_data, 1, 0, 1200, 'red', 'X', 0, 0.1, 200)
     # loguru.logger.debug(out[0:1000, 1])
 
     # draw(Post_imu_data, 1, 3600, 4000, 'black', 'Imu', 0)
@@ -300,8 +328,8 @@ async def run():
     # loguru.logger.debug(predata)
 
     # out = predata['actual']
-
-    Brain_Data = predata['actual']
+    Brain_Data_Act = predata['actual']
+    Brain_Data_Pri = predata['prediction']
 
     # out = out[0:1000, 1]
 
@@ -313,7 +341,8 @@ async def run():
     Post_imu_data = mprocessor.bin_data(imu_data, timestamp=times / 1000, bin_size=0.1, dim=[0])
 
     Index = 0
-    out = Post_imu_data[0:600]
+    # out = Post_imu_data[4201:4800]
+    out = Brain_Data_Pri[626:1200]
     CacheTime_data = []
     for each in out:
         anidata = [each]
@@ -324,7 +353,9 @@ async def run():
         Index = Index + 1
 
     # TestCycle(CacheTime_data)
-    # Test2(imu_data,Brain_Data,Post_imu_data)
+    # Test2(imu_data,Brain_Data_Pri,Brain_Data_Act,Post_imu_data)
+
+    # TestloadData()
 
 
 if __name__ == '__main__':
